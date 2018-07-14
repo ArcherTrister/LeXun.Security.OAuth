@@ -1,12 +1,10 @@
 AspNet.Security.OAuth.Providers
 ==================================
 
-**Security.OAuth.Providers** is a **collection of security middleware** that you can use in your **ASP.NET Core** application to support social authentication providers like **[GitHub](https://github.com/)**, **[Foursquare](https://foursquare.com/)** or **[Dropbox](https://www.dropbox.com/)**. It is directly inspired by **[Jerrie Pelser](https://github.com/jerriep)**'s initiative, **[Owin.Security.Providers](https://github.com/RockstarLabs/OwinOAuthProviders)**.
+**Security.OAuth.Providers** is a **collection of security middleware** that you can use in your **ASP.NET Core** application to support social authentication providers like **[GitHub](https://github.com/)**, **[Foursquare](https://foursquare.com/)** or **[Dropbox](https://www.dropbox.com/)**. It is directly inspired by **[Jerrie Pelser](https://github.com/jerriep)**'s initiative, **[Owin.Security.Providers](https://github.com/ArcherTrister/Security.OAuth)**.
 
-**The latest official release can be found on [NuGet](https://www.nuget.org/profiles/aspnet-contrib) and the nightly builds on [MyGet](https://www.myget.org/gallery/aspnet-contrib)**.
+**The latest official release can be found on [NuGet](https://www.nuget.org/profiles/ArcherTrister) and the nightly builds on [MyGet](https://www.myget.org/gallery/ArcherTrister)**.
 
-[![Build status](https://ci.appveyor.com/api/projects/status/3lh3pq6e57c8pnr4/branch/dev?svg=true)](https://ci.appveyor.com/project/aspnet-contrib/aspnet-security-oauth-providers/branch/dev)
-[![Build status](https://travis-ci.org/aspnet-contrib/AspNet.Security.OAuth.Providers.svg?branch=dev)](https://travis-ci.org/aspnet-contrib/AspNet.Security.OAuth.Providers)
 
 ## Getting started
 
@@ -20,7 +18,7 @@ app.UseGitHubAuthentication(options =>
 });
 ```
 
-See [https://github.com/ArcherTrister/Security.OAuth/tree/dev/samples/AspNetCore.Client](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers/tree/dev/samples/Mvc.Client) for a complete sample **using ASP.NET Core MVC and supporting multiple social providers**.
+See [https://github.com/ArcherTrister/Security.OAuth/tree/dev/samples/AspNetCore.Client](https://github.com/ArcherTrister/Security.OAuth/tree/dev/samples/AspNetCore.Client) for a complete sample **using ASP.NET Core MVC and supporting multiple social providers**.
 
 ## Contributing
 
