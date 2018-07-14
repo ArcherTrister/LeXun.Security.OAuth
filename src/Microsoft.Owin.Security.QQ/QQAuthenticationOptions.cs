@@ -15,19 +15,19 @@ namespace Microsoft.Owin.Security.QQ
         ///     Initializes a new <see cref="QQAuthenticationOptions" />
         /// </summary>
         public QQAuthenticationOptions()
-            : base(Constants.AuthenticationScheme)
+            : base(QQAuthenticationDefaults.AuthenticationScheme)
         {
-            Caption = Constants.DisplayName;
-            CallbackPath = new PathString(Constants.CallbackPath);
+            Caption = QQAuthenticationDefaults.DisplayName;
+            CallbackPath = new PathString(QQAuthenticationDefaults.CallbackPath);
             AuthenticationMode = AuthenticationMode.Passive;
             Scope = new List<string>
             {
                 "get_user_info"
             };
             BackchannelTimeout = TimeSpan.FromSeconds(60);
-            AuthorizationEndPoint = Constants.AuthorizationEndpoint;
-            TokenEndPoint = Constants.TokenEndpoint;
-            UserInfoEndPoint = Constants.UserInformationEndpoint;
+            AuthorizationEndPoint = QQAuthenticationDefaults.AuthorizationEndpoint;
+            TokenEndPoint = QQAuthenticationDefaults.TokenEndpoint;
+            UserInfoEndPoint = QQAuthenticationDefaults.UserInformationEndpoint;
         }
 
         /// <summary>

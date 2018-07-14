@@ -46,11 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaiduAuthenticationDefaults.cs" />
     <Compile Include="BaiduAuthenticationExtensions.cs" />
     <Compile Include="BaiduAuthenticationHandler.cs" />
     <Compile Include="BaiduAuthenticationMiddleware.cs" />
     <Compile Include="BaiduAuthenticationOptions.cs" />
-    <Compile Include="Constants.cs" />
+    <Compile Include="BaiduAuthenticationConstants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider\BaiduAuthenticatedContext.cs" />
     <Compile Include="Provider\BaiduAuthenticationProvider.cs" />

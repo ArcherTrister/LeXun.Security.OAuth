@@ -1,19 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <Import Project="..\..\build\packages.props" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EED41D91-CA7F-40FB-9F5D-598084EF2B7F}</ProjectGuid>
+    <ProjectGuid>{AC1931F3-88ED-410F-8D61-728C4A346C22}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.Owin.Security.QQ</RootNamespace>
-    <AssemblyName>Microsoft.Owin.Security.QQ</AssemblyName>
+    <RootNamespace>Microsoft.Owin.Security.WeiChat</RootNamespace>
+    <AssemblyName>Microsoft.Owin.Security.WeiChat</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,7 +21,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Microsoft.Owin.Security.QQ.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,7 +29,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Microsoft.Owin.Security.QQ.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,28 +42,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="QQAuthenticationDefaults.cs" />
-    <Compile Include="QQAuthenticationExtensions.cs" />
-    <Compile Include="QQAuthenticationHandler.cs" />
-    <Compile Include="QQAuthenticationMiddleware.cs" />
-    <Compile Include="QQAuthenticationOptions.cs" />
-    <Compile Include="QQAuthenticationConstants.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Provider\QQAuthenticatedContext.cs" />
-    <Compile Include="Provider\QQAuthenticationProvider.cs" />
-    <Compile Include="Provider\QQReturnEndpointContext.cs" />
-    <Compile Include="Provider\IQQAuthenticationProvider.cs" />
     <Compile Include="Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <Compile Include="WeiChatAuthenticationConstants.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\IWeChatAuthenticationProvider.cs" />
+    <Compile Include="Provider\WeChatAuthenticatedContext.cs" />
+    <Compile Include="Provider\WeChatAuthenticationProvider.cs" />
+    <Compile Include="Provider\WeChatReturnEndpointContext.cs" />
+    <Compile Include="WeChatAuthenticationExtensions.cs" />
+    <Compile Include="WeChatAuthenticationHandler.cs" />
+    <Compile Include="WeChatAuthenticationMiddleware.cs" />
+    <Compile Include="WeChatAuthenticationOptions.cs" />
+    <Compile Include="WeiChatAuthenticationDefaults.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Owin">
@@ -82,6 +72,12 @@
     <PackageReference Include="Owin">
       <Version>1.0.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,6 +11,7 @@ using Microsoft.Owin.Security.Infrastructure;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
+using static Microsoft.Owin.Security.Baidu.BaiduAuthenticationConstants;
 
 namespace Microsoft.Owin.Security.Baidu
 {
@@ -96,6 +97,11 @@ namespace Microsoft.Owin.Security.Baidu
 
                 // Deserializes the token response
                 dynamic response = JsonConvert.DeserializeObject<dynamic>(text);
+                if (response == null || response.access_token == null)
+                {
+                    _logger.WriteWarning("Access token was not found");
+                    return new AuthenticationTicket(null, properties);
+                }
                 var accessToken = (string)response.access_token;
 
                 // Get the Baidu user
@@ -117,10 +123,12 @@ namespace Microsoft.Owin.Security.Baidu
                 if (!string.IsNullOrEmpty(context.UserId))
                 {
                     context.Identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, context.UserId, XmlSchemaString, Options.AuthenticationType));
+                    context.Identity.AddClaim(new Claim(Claims.UserId, context.UserId, XmlSchemaString, Options.AuthenticationType));
                 }
                 if (!string.IsNullOrEmpty(context.UserName))
                 {
                     context.Identity.AddClaim(new Claim(ClaimsIdentity.DefaultNameClaimType, context.UserName, XmlSchemaString, Options.AuthenticationType));
+                    context.Identity.AddClaim(new Claim(Claims.UserName, context.UserName, XmlSchemaString, Options.AuthenticationType));
                 }
                 context.Properties = properties;
 

@@ -42,6 +42,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Owin.Security.Bai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Owin.Security.QQ", "src\Microsoft.Owin.Security.QQ\Microsoft.Owin.Security.QQ.csproj", "{EED41D91-CA7F-40FB-9F5D-598084EF2B7F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Owin.Security.WeiChat", "src\Microsoft.Owin.Security.WeiChat\Microsoft.Owin.Security.WeiChat.csproj", "{AC1931F3-88ED-410F-8D61-728C4A346C22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Owin.Security.Csdn", "src\Microsoft.Owin.Security.Csdn\Microsoft.Owin.Security.Csdn.csproj", "{B370D4B6-1A83-4925-8BA5-53707EFAF835}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Owin.Security.Sina", "src\Microsoft.Owin.Security.Sina\Microsoft.Owin.Security.Sina.csproj", "{D312333E-D89C-4FD1-9F8A-2FBA4376AAE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Owin.Security.Alipay", "src\Microsoft.Owin.Security.Alipay\Microsoft.Owin.Security.Alipay.csproj", "{50E0D4A8-D547-444C-8C47-EAC235B7135A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -84,6 +92,22 @@ Global
 		{EED41D91-CA7F-40FB-9F5D-598084EF2B7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EED41D91-CA7F-40FB-9F5D-598084EF2B7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EED41D91-CA7F-40FB-9F5D-598084EF2B7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC1931F3-88ED-410F-8D61-728C4A346C22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC1931F3-88ED-410F-8D61-728C4A346C22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC1931F3-88ED-410F-8D61-728C4A346C22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC1931F3-88ED-410F-8D61-728C4A346C22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B370D4B6-1A83-4925-8BA5-53707EFAF835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B370D4B6-1A83-4925-8BA5-53707EFAF835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B370D4B6-1A83-4925-8BA5-53707EFAF835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B370D4B6-1A83-4925-8BA5-53707EFAF835}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D312333E-D89C-4FD1-9F8A-2FBA4376AAE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D312333E-D89C-4FD1-9F8A-2FBA4376AAE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D312333E-D89C-4FD1-9F8A-2FBA4376AAE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D312333E-D89C-4FD1-9F8A-2FBA4376AAE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50E0D4A8-D547-444C-8C47-EAC235B7135A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50E0D4A8-D547-444C-8C47-EAC235B7135A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50E0D4A8-D547-444C-8C47-EAC235B7135A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50E0D4A8-D547-444C-8C47-EAC235B7135A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +122,10 @@ Global
 		{164FD435-65C1-406C-874F-C72110871E53} = {EB47B3AA-768E-4D55-BE24-F961A09AEB1F}
 		{01065BE1-F042-4A5D-98BF-D238A83DB05C} = {EB47B3AA-768E-4D55-BE24-F961A09AEB1F}
 		{EED41D91-CA7F-40FB-9F5D-598084EF2B7F} = {EB47B3AA-768E-4D55-BE24-F961A09AEB1F}
+		{AC1931F3-88ED-410F-8D61-728C4A346C22} = {EB47B3AA-768E-4D55-BE24-F961A09AEB1F}
+		{B370D4B6-1A83-4925-8BA5-53707EFAF835} = {EB47B3AA-768E-4D55-BE24-F961A09AEB1F}
+		{D312333E-D89C-4FD1-9F8A-2FBA4376AAE7} = {EB47B3AA-768E-4D55-BE24-F961A09AEB1F}
+		{50E0D4A8-D547-444C-8C47-EAC235B7135A} = {EB47B3AA-768E-4D55-BE24-F961A09AEB1F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8A3A261A-99BC-4734-B130-203331CC94C4}

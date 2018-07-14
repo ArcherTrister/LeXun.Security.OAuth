@@ -15,19 +15,19 @@ namespace Microsoft.Owin.Security.Baidu
         ///     Initializes a new <see cref="BaiduAuthenticationOptions" />
         /// </summary>
         public BaiduAuthenticationOptions()
-            : base(Constants.AuthenticationScheme)
+            : base(BaiduAuthenticationConstants.AuthenticationScheme)
         {
-            Caption = Constants.DisplayName;
-            CallbackPath = new PathString(Constants.CallbackPath);
+            Caption = BaiduAuthenticationConstants.DisplayName;
+            CallbackPath = new PathString(BaiduAuthenticationConstants.CallbackPath);
             AuthenticationMode = AuthenticationMode.Passive;
             Scope = new List<string>
             {
                 "basic"
             };
             BackchannelTimeout = TimeSpan.FromSeconds(60);
-            AuthorizationEndPoint = Constants.AuthorizationEndpoint;
-            TokenEndPoint = Constants.TokenEndpoint;
-            UserInfoEndPoint = Constants.UserInformationEndpoint;
+            AuthorizationEndPoint = BaiduAuthenticationConstants.AuthorizationEndpoint;
+            TokenEndPoint = BaiduAuthenticationConstants.TokenEndpoint;
+            UserInfoEndPoint = BaiduAuthenticationConstants.UserInformationEndpoint;
         }
         /// <summary>
         /// Endpoint which is used to redirect users to request Baidu access

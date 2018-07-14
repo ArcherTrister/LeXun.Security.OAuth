@@ -11,13 +11,15 @@ using Microsoft.Owin.Security.Infrastructure;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
+using Microsoft.Owin.Security.WeiChat.Provider;
+using static Microsoft.Owin.Security.WeiChat.WeiChatAuthenticationConstants;
 
-namespace Microsoft.Owin.Security.QQ
+namespace Microsoft.Owin.Security.WeiChat
 {
     /// <summary>
     /// 
     /// </summary>
-    public class QQAuthenticationHandler : AuthenticationHandler<QQAuthenticationOptions>
+    public class WeiChatAuthenticationHandler : AuthenticationHandler<WeiChatAuthenticationOptions>
     {
         private const string XmlSchemaString = "http://www.w3.org/2001/XMLSchema#string";
         private readonly ILogger _logger;
@@ -28,7 +30,7 @@ namespace Microsoft.Owin.Security.QQ
         /// </summary>
         /// <param name="httpClient"></param>
         /// <param name="logger"></param>
-        public QQAuthenticationHandler(HttpClient httpClient, ILogger logger)
+        public WeiChatAuthenticationHandler(HttpClient httpClient, ILogger logger)
         {
             _httpClient = httpClient;
             _logger = logger;
@@ -83,8 +85,8 @@ namespace Microsoft.Owin.Security.QQ
                     new KeyValuePair<string, string>("grant_type", "authorization_code"),
                     new KeyValuePair<string, string>("code", code),
                     new KeyValuePair<string, string>("redirect_uri", redirectUri),
-                    new KeyValuePair<string, string>("client_id", Options.AppId),
-                    new KeyValuePair<string, string>("client_secret", Options.AppSecret)
+                    new KeyValuePair<string, string>("appid", Options.AppId),
+                    new KeyValuePair<string, string>("secret", Options.AppSecret)
                 };
 
                 // Request the token
@@ -101,17 +103,20 @@ namespace Microsoft.Owin.Security.QQ
                     return new AuthenticationTicket(null, properties);
                 }
                 var accessToken = (string)response.access_token;
-                var expiresIn = (int)response.expires_in;
-                // Get the QQ user
-                //http://wiki.open.qq.com/wiki/website/get_user_info
-                var userResponse = await _httpClient.GetAsync(
-                    Options.UserInfoEndPoint + "?access_token=" + Uri.EscapeDataString(accessToken), Request.CallCancelled);
+                //var expiresIn = (int)response.expires_in;
+                var openid = (string)response.openid;
+                // Get the WeiChat user
+                //
+                string userInfoUri = Options.UserInfoEndPoint +
+                        "?access_token=" + Uri.EscapeDataString(accessToken) +
+                        "&openid=" + Uri.EscapeDataString(openid);
+                HttpResponseMessage userResponse = await _httpClient.GetAsync(userInfoUri, Request.CallCancelled);
 
                 userResponse.EnsureSuccessStatusCode();
                 text = await userResponse.Content.ReadAsStringAsync();
                 var user = JObject.Parse(text);
 
-                var context = new QQAuthenticatedContext(Context, user, accessToken, expiresIn)
+                var context = new WeiChatAuthenticatedContext(Context, user, accessToken)
                 {
                     Identity = new ClaimsIdentity(
                         Options.AuthenticationType,
@@ -121,10 +126,12 @@ namespace Microsoft.Owin.Security.QQ
                 if (!string.IsNullOrEmpty(context.UserId))
                 {
                     context.Identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, context.UserId, XmlSchemaString, Options.AuthenticationType));
+                    context.Identity.AddClaim(new Claim(Claims.OpenId, context.UserId, XmlSchemaString, Options.AuthenticationType));
                 }
                 if (!string.IsNullOrEmpty(context.UserName))
                 {
                     context.Identity.AddClaim(new Claim(ClaimsIdentity.DefaultNameClaimType, context.UserName, XmlSchemaString, Options.AuthenticationType));
+                    context.Identity.AddClaim(new Claim(Claims.NickName, context.UserName, XmlSchemaString, Options.AuthenticationType));
                 }
                 context.Properties = properties;
 
@@ -182,13 +189,14 @@ namespace Microsoft.Owin.Security.QQ
 
             var state = Options.StateDataFormat.Protect(properties);
 
-            var authorizationEndpoint =
-                Options.AuthorizationEndPoint +
-                "?response_type=code" +
-                "&client_id=" + Uri.EscapeDataString(Options.AppId) +
-                "&redirect_uri=" + Uri.EscapeDataString(redirectUri) +
-                "&scope=" + Uri.EscapeDataString(scope) +
-                "&state=" + Uri.EscapeDataString(state);
+            string authorizationEndpoint =
+                    Options.AuthorizationEndPoint +
+                        "?appid=" + Uri.EscapeDataString(Options.AppId ?? string.Empty) +
+                        "&redirect_uri=" + Uri.EscapeDataString(redirectUri) +
+                        "&scope=" + Uri.EscapeDataString(scope) +
+                        "&state=" + Uri.EscapeDataString(state) +
+                        "&response_type=code";
+
 
             //var cookieOptions = new CookieOptions
             //{
@@ -226,7 +234,7 @@ namespace Microsoft.Owin.Security.QQ
                 return true;
             }
 
-            var context = new QQReturnEndpointContext(Context, ticket)
+            var context = new WeiChatReturnEndpointContext(Context, ticket)
             {
                 SignInAsAuthenticationType = Options.SignInAsAuthenticationType,
                 RedirectUri = ticket.Properties.RedirectUri
