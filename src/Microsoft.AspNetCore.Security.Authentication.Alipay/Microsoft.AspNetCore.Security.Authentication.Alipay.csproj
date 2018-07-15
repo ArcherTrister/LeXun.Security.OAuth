@@ -24,7 +24,7 @@
     <!--标记-->
     <PackageTags>aspnetcore;authentication;oauth;security;alipay</PackageTags>
     <!--发行说明-->
-    <PackageReleaseNotes>Add Alipay Provider</PackageReleaseNotes>
+    <PackageReleaseNotes>修改Claims中出现的qq字符</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
