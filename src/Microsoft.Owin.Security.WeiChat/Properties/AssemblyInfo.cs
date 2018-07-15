@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("Microsoft.Owin.Security.WeiChat")]
-[assembly: AssemblyDescription("QQ OAuth For ASP.NET.")]
+[assembly: AssemblyDescription("WeiChat OAuth For ASP.NET.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("LeXun")]
 [assembly: AssemblyProduct("Security.OAuth")]
