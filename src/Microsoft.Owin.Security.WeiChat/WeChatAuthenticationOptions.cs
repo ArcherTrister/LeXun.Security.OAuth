@@ -1,8 +1,7 @@
-﻿using System;
+﻿using Microsoft.Owin.Security.WeiChat.Provider;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using Microsoft.Owin.Security;
-using Microsoft.Owin.Security.WeiChat.Provider;
 
 namespace Microsoft.Owin.Security.WeiChat
 {

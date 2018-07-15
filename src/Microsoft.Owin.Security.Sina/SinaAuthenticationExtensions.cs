@@ -21,16 +21,6 @@ namespace Owin
             return app;
         }
 
-        //public static IAppBuilder UseSinaAuthentication(this IAppBuilder app, string appId, string appSecret)
-        //{
-        //    return app.UseSinaAuthentication(new SinaAuthenticationOptions
-        //    {
-        //        AppId = appId,
-        //        AppSecret = appSecret,
-        //        Schema = "https"
-        //    });
-        //}
-
         /// <summary>
         /// 新浪微博授权登录
         /// </summary>

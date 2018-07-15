@@ -4,12 +4,12 @@
  * for more information concerning the license and the contributors participating to this project.
  */
 
-namespace Microsoft.AspNetCore.Security.Authentication.WeChat
+namespace Microsoft.AspNetCore.Security.Authentication.WeiChat
 {
     /// <summary>
-    /// Contains constants specific to the <see cref="WeChatAuthenticationHandler"/>.
+    /// Contains constants specific to the <see cref="WeiChatAuthenticationHandler"/>.
     /// </summary>
-    public static class WeChatAuthenticationConstants
+    public static class WeiChatAuthenticationConstants
     {
         public static class Claims
         {

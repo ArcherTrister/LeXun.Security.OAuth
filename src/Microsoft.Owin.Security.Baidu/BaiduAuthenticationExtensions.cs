@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Owin.Security.Baidu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class BaiduAuthenticationExtensions
     {

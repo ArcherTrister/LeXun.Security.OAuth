@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Net.Http;
-using Microsoft.Owin;
-using Microsoft.Owin.Security;
 using System.Collections.Generic;
+using System.Net.Http;
 
 namespace Microsoft.Owin.Security.Baidu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BaiduAuthenticationOptions : AuthenticationOptions
     {
@@ -15,20 +13,21 @@ namespace Microsoft.Owin.Security.Baidu
         ///     Initializes a new <see cref="BaiduAuthenticationOptions" />
         /// </summary>
         public BaiduAuthenticationOptions()
-            : base(BaiduAuthenticationConstants.AuthenticationScheme)
+            : base(BaiduAuthenticationDefaults.AuthenticationScheme)
         {
-            Caption = BaiduAuthenticationConstants.DisplayName;
-            CallbackPath = new PathString(BaiduAuthenticationConstants.CallbackPath);
+            Caption = BaiduAuthenticationDefaults.DisplayName;
+            CallbackPath = new PathString(BaiduAuthenticationDefaults.CallbackPath);
             AuthenticationMode = AuthenticationMode.Passive;
             Scope = new List<string>
             {
                 "basic"
             };
             BackchannelTimeout = TimeSpan.FromSeconds(60);
-            AuthorizationEndPoint = BaiduAuthenticationConstants.AuthorizationEndpoint;
-            TokenEndPoint = BaiduAuthenticationConstants.TokenEndpoint;
-            UserInfoEndPoint = BaiduAuthenticationConstants.UserInformationEndpoint;
+            AuthorizationEndPoint = BaiduAuthenticationDefaults.AuthorizationEndpoint;
+            TokenEndPoint = BaiduAuthenticationDefaults.TokenEndpoint;
+            UserInfoEndPoint = BaiduAuthenticationDefaults.UserInformationEndpoint;
         }
+
         /// <summary>
         /// Endpoint which is used to redirect users to request Baidu access
         /// </summary>
@@ -52,6 +51,7 @@ namespace Microsoft.Owin.Security.Baidu
         /// Defaults to https://openapi.baidu.com/rest/2.0/passport/users/getInfo
         /// </remarks>
         public string UserInfoEndPoint { get; set; }
+
         /// <summary>
         ///     Gets or sets the a pinned certificate validator to use to validate the endpoints used
         ///     in back channel communications belong to Baidu
@@ -105,7 +105,7 @@ namespace Microsoft.Owin.Security.Baidu
         /// Gets or sets the Baidu supplied Secret Key
         /// </summary>
         public string AppSecret { get; set; }
-        
+
         /// <summary>
         /// A list of permissions to request.
         /// </summary>
@@ -126,7 +126,5 @@ namespace Microsoft.Owin.Security.Baidu
         ///     Gets or sets the type used to secure data handled by the middleware.
         /// </summary>
         public ISecureDataFormat<AuthenticationProperties> StateDataFormat { get; set; }
-
-
     }
 }

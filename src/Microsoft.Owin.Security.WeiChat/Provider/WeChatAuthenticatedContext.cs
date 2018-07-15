@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using Microsoft.Owin;
-using Microsoft.Owin.Security;
+﻿using Microsoft.Owin.Security.Provider;
 using Newtonsoft.Json.Linq;
-using Microsoft.Owin.Security.Provider;
+using System.Security.Claims;
 
 namespace Microsoft.Owin.Security.WeiChat.Provider
 {
@@ -15,7 +9,6 @@ namespace Microsoft.Owin.Security.WeiChat.Provider
         public WeiChatAuthenticatedContext(IOwinContext context, JObject user, string accessToken)//, int expiresIn
             : base(context)
         {
-
             User = user;
             AccessToken = accessToken;
 

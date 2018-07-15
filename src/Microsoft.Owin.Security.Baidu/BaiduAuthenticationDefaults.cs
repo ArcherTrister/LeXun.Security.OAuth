@@ -1,11 +1,4 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-
-namespace Microsoft.Owin.Security.Baidu
+﻿namespace Microsoft.Owin.Security.Baidu
 {
     /// <summary>
     /// Default values for Baidu authentication.

@@ -1,11 +1,6 @@
-﻿using Microsoft.Owin;
-using Microsoft.Owin.Security;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Microsoft.Owin.Security.QQ
 {
@@ -34,7 +29,7 @@ namespace Microsoft.Owin.Security.QQ
         /// Endpoint which is used to redirect users to request Tencent access
         /// </summary>
         /// <remarks>
-        /// Defaults to https://graph.qq.com/oauth2.0/authorize 
+        /// Defaults to https://graph.qq.com/oauth2.0/authorize
         /// </remarks>
         public string AuthorizationEndPoint { get; set; }
 
@@ -42,7 +37,7 @@ namespace Microsoft.Owin.Security.QQ
         /// Endpoint which is used to exchange code for access token
         /// </summary>
         /// <remarks>
-        /// Defaults to https://graph.qq.com/oauth2.0/token 
+        /// Defaults to https://graph.qq.com/oauth2.0/token
         /// </remarks>
         public string TokenEndPoint { get; set; }
 
@@ -112,7 +107,6 @@ namespace Microsoft.Owin.Security.QQ
         ///  Gets or sets the schema
         /// </summary>
         public string Schema { get; set; }
-
 
         /// <summary>
         ///     Gets or sets the <see cref="IQQAuthenticationProvider" /> used in the authentication events

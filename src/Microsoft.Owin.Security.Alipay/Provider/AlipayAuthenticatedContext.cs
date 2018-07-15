@@ -1,0 +1,75 @@
+// Copyright (c) Microsoft Open Technologies, Inc. All rights reserved. See License.txt in the project root for license information.
+
+using Microsoft.Owin.Security.Provider;
+using Newtonsoft.Json.Linq;
+using System.Security.Claims;
+
+namespace Microsoft.Owin.Security.Alipay
+{
+    /// <summary>
+    /// Contains information about the login session as well as the user <see cref="System.Security.Claims.ClaimsIdentity"/>.
+    /// </summary>
+    public class AlipayAuthenticatedContext : BaseContext
+    {
+        /// <summary>
+        /// Initializes a <see cref="AlipayAuthenticatedContext"/>
+        /// </summary>
+        /// <param name="context">The OWIN environment</param>
+        /// <param name="user">The JSON-serialized user</param>
+        /// <param name="accessToken">Alipay Access token</param>
+        public AlipayAuthenticatedContext(IOwinContext context, JObject user, string accessToken)
+            : base(context)
+        {
+            AccessToken = accessToken;
+            User = user;
+
+            UserId = TryGetValue(user, "userid");
+            UserName = TryGetValue(user, "username");
+            //RealName = TryGetValue(user, "realname");
+        }
+
+        /// <summary>
+        /// Gets the JSON-serialized user
+        /// </summary>
+        /// <remarks>
+        /// Contains the Alipay user obtained from the endpoint https://api.dropbox.com/1/account/info
+        /// </remarks>
+        public JObject User { get; private set; }
+
+        /// <summary>
+        /// Gets the Alipay OAuth access token
+        /// </summary>
+        public string AccessToken { get; private set; }
+
+        /// <summary>
+        /// Gets the Alipay user ID
+        /// </summary>
+        public string UserId { get; private set; }
+
+        /// <summary>
+        /// The name of the user
+        /// </summary>
+        public string UserName { get; private set; }
+
+        ///// <summary>
+        ///// The real name of the user
+        ///// </summary>
+        //public string RealName { get; private set; }
+
+        /// <summary>
+        /// Gets the <see cref="ClaimsIdentity"/> representing the user
+        /// </summary>
+        public ClaimsIdentity Identity { get; set; }
+
+        /// <summary>
+        /// Gets or sets a property bag for common authentication properties
+        /// </summary>
+        public AuthenticationProperties Properties { get; set; }
+
+        private static string TryGetValue(JObject user, string propertyName)
+        {
+            JToken value;
+            return user.TryGetValue(propertyName, out value) ? value.ToString() : null;
+        }
+    }
+}

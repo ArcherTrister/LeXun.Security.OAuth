@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.WeiChat;
-using Microsoft.Owin.Security;
+using System;
 
 namespace Owin
 {
@@ -20,7 +20,7 @@ namespace Owin
         //}
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="app"></param>
         /// <param name="options"></param>

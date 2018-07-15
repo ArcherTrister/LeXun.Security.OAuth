@@ -1,10 +1,8 @@
 // Copyright (c) Microsoft Open Technologies, Inc. All rights reserved. See License.txt in the project root for license information.
 
-using System.Security.Claims;
-using Microsoft.Owin;
-using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Provider;
 using Newtonsoft.Json.Linq;
+using System.Security.Claims;
 
 namespace Microsoft.Owin.Security.Baidu
 {
@@ -27,7 +25,7 @@ namespace Microsoft.Owin.Security.Baidu
 
             UserId = TryGetValue(user, "userid");
             UserName = TryGetValue(user, "username");
-            RealName = TryGetValue(user, "realname");
+            //RealName = TryGetValue(user, "realname");
         }
 
         /// <summary>
@@ -53,10 +51,10 @@ namespace Microsoft.Owin.Security.Baidu
         /// </summary>
         public string UserName { get; private set; }
 
-        /// <summary>
-        /// The real name of the user
-        /// </summary>
-        public string RealName { get; private set; }
+        ///// <summary>
+        ///// The real name of the user
+        ///// </summary>
+        //public string RealName { get; private set; }
 
         /// <summary>
         /// Gets the <see cref="ClaimsIdentity"/> representing the user

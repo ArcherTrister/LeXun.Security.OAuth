@@ -12,37 +12,50 @@ namespace Microsoft.Owin.Security.Sina
 {
     public class SinaAuthenticationOptions:AuthenticationOptions
     {
-        public class SinaAuthenticationEndpoints
+        /// <summary>
+        ///     Initializes a new <see cref="SinaAuthenticationOptions" />
+        /// </summary>
+        public SinaAuthenticationOptions()
+            : base(DefaultAuthenticationType)
         {
-            /// <summary>
-            /// Endpoint which is used to redirect users to request Sina access
-            /// </summary>
-            /// <remarks>
-            /// Defaults to https://api.weibo.com/oauth2/authorize
-            /// </remarks>
-            public string AuthorizationEndpoint { get; set; }
-
-            /// <summary>
-            /// Endpoint which is used to exchange code for access token
-            /// </summary>
-            /// <remarks>
-            /// Defaults to https://api.weibo.com/oauth2/access_token
-            /// </remarks>
-            public string TokenEndpoint { get; set; }
-
-            /// <summary>
-            /// Endpoint which is used to obtain user information after authentication
-            /// </summary>
-            /// <remarks>
-            /// Defaults to https://api.weibo.com/oauth2/get_token_info
-            /// </remarks>
-            public string UserInfoEndpoint { get; set; }
+            Caption = DefaultAuthenticationType;
+            CallbackPath = new PathString("/signin-sina");
+            AuthenticationMode = AuthenticationMode.Passive;
+            Scope = new List<string>
+            {
+                "all"
+            };
+            BackchannelTimeout = TimeSpan.FromSeconds(60);
+            AuthorizationEndpoint = AuthorizationEndPoint;
+            TokenEndpoint = TokenEndpoint;
+            UserInfoEndpoint = UserInfoEndpoint;
         }
+        /// <summary>
+        /// Endpoint which is used to redirect users to request Sina access
+        /// </summary>
+        /// <remarks>
+        /// Defaults to https://api.weibo.com/oauth2/authorize
+        /// </remarks>
+        public string AuthorizationEndpoint { get; set; }
+
+        /// <summary>
+        /// Endpoint which is used to exchange code for access token
+        /// </summary>
+        /// <remarks>
+        /// Defaults to https://api.weibo.com/oauth2/access_token
+        /// </remarks>
+        public string TokenEndpoint { get; set; }
+
+        /// <summary>
+        /// Endpoint which is used to obtain user information after authentication
+        /// </summary>
+        /// <remarks>
+        /// Defaults to https://api.weibo.com/oauth2/get_token_info
+        /// </remarks>
+        public string UserInfoEndpoint { get; set; }
 
 
-        private const string AuthorizationEndPoint = "https://api.weibo.com/oauth2/authorize";
-        private const string TokenEndpoint = "https://api.weibo.com/oauth2/access_token";
-        private const string UserInfoEndpoint = "https://api.weibo.com/oauth2/get_token_info";
+
 
         /// <summary>
         ///     Gets or sets the a pinned certificate validator to use to validate the endpoints used
@@ -130,26 +143,5 @@ namespace Microsoft.Owin.Security.Sina
         /// </summary>
         public ISecureDataFormat<AuthenticationProperties> StateDataFormat { get; set; }
 
-        /// <summary>
-        ///     Initializes a new <see cref="SinaAuthenticationOptions" />
-        /// </summary>
-        public SinaAuthenticationOptions()
-            : base(Constants.DefaultAuthenticationType)
-        {
-            Caption = Constants.DefaultAuthenticationType;
-            CallbackPath = new PathString("/signin-sina");
-            AuthenticationMode = AuthenticationMode.Passive;
-            Scope = new List<string>
-            {
-                "all"
-            };
-            BackchannelTimeout = TimeSpan.FromSeconds(60);
-			Endpoints = new SinaAuthenticationEndpoints
-            {
-                AuthorizationEndpoint = AuthorizationEndPoint,
-                TokenEndpoint = TokenEndpoint,
-                UserInfoEndpoint = UserInfoEndpoint
-            };
-        }
     }
 }

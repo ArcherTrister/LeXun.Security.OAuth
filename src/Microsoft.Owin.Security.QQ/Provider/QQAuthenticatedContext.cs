@@ -1,11 +1,9 @@
 // Copyright (c) Microsoft Open Technologies, Inc. All rights reserved. See License.txt in the project root for license information.
 
-using System;
-using System.Security.Claims;
-using Microsoft.Owin;
-using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Provider;
 using Newtonsoft.Json.Linq;
+using System;
+using System.Security.Claims;
 
 namespace Microsoft.Owin.Security.QQ
 {

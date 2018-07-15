@@ -1,18 +1,16 @@
-﻿using System;
-using System.Globalization;
-using System.Net.Http;
-using Microsoft.Owin;
-using Microsoft.Owin.Logging;
-using Microsoft.Owin.Security;
+﻿using Microsoft.Owin.Logging;
 using Microsoft.Owin.Security.DataHandler;
 using Microsoft.Owin.Security.DataProtection;
 using Microsoft.Owin.Security.Infrastructure;
 using Owin;
+using System;
+using System.Globalization;
+using System.Net.Http;
 
 namespace Microsoft.Owin.Security.Baidu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BaiduAuthenticationMiddleware : AuthenticationMiddleware<BaiduAuthenticationOptions>
     {
@@ -20,7 +18,7 @@ namespace Microsoft.Owin.Security.Baidu
         private readonly ILogger _logger;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="next"></param>
         /// <param name="app"></param>
@@ -44,7 +42,7 @@ namespace Microsoft.Owin.Security.Baidu
             if (Options.StateDataFormat == null)
             {
                 var dataProtector = app.CreateDataProtector(
-                    typeof (BaiduAuthenticationMiddleware).FullName,
+                    typeof(BaiduAuthenticationMiddleware).FullName,
                     Options.AuthenticationType, "v1");
                 Options.StateDataFormat = new PropertiesDataFormat(dataProtector);
             }
@@ -55,7 +53,7 @@ namespace Microsoft.Owin.Security.Baidu
             _httpClient = new HttpClient(ResolveHttpMessageHandler(Options))
             {
                 Timeout = Options.BackchannelTimeout,
-                MaxResponseContentBufferSize = 1024*1024*10
+                MaxResponseContentBufferSize = 1024 * 1024 * 10
             };
         }
 

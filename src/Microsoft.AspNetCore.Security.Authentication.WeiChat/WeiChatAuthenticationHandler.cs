@@ -18,12 +18,12 @@ using System.Security.Claims;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 
-namespace Microsoft.AspNetCore.Security.Authentication.WeChat
+namespace Microsoft.AspNetCore.Security.Authentication.WeiChat
 {
-    public class WeChatAuthenticationHandler : OAuthHandler<WeChatAuthenticationOptions>
+    public class WeiChatAuthenticationHandler : OAuthHandler<WeiChatAuthenticationOptions>
     {
-        public WeChatAuthenticationHandler(
-            [NotNull] IOptionsMonitor<WeChatAuthenticationOptions> options,
+        public WeiChatAuthenticationHandler(
+            [NotNull] IOptionsMonitor<WeiChatAuthenticationOptions> options,
             [NotNull] ILoggerFactory logger,
             [NotNull] UrlEncoder encoder,
             [NotNull] ISystemClock clock)

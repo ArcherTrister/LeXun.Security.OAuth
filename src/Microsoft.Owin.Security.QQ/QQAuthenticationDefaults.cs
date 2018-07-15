@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-
-namespace Microsoft.Owin.Security.QQ
+﻿namespace Microsoft.Owin.Security.QQ
 {
     /// <summary>
     /// Default values for QQ authentication.
@@ -49,7 +43,7 @@ namespace Microsoft.Owin.Security.QQ
         /// <summary>
         /// Default value for <see cref="QQAuthenticationOptions.UserInfoEndPoint"/>.
         /// </summary>
-        public const string UserInformationEndpoint = "https://graph.qq.com/oauth2.0/me";
-        //"https://graph.qq.com/user/get_user_info";
+        public const string UserInformationEndpoint = "https://graph.qq.com/user/get_user_info";
+
     }
 }

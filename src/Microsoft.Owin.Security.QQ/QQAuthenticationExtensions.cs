@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Owin.Security.QQ
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class QQAuthenticationExtensions
     {

@@ -1,16 +1,15 @@
-﻿using System;
-using System.Net.Http;
-using Microsoft.Owin;
-using Microsoft.Owin.Logging;
+﻿using Microsoft.Owin.Logging;
 using Microsoft.Owin.Security.DataHandler;
 using Microsoft.Owin.Security.DataProtection;
 using Microsoft.Owin.Security.Infrastructure;
-using Owin;
 using Microsoft.Owin.Security.WeiChat.Provider;
+using Owin;
+using System;
+using System.Net.Http;
 
 namespace Microsoft.Owin.Security.WeiChat
 {
-    public class WeiChatAuthenticationMiddleware :AuthenticationMiddleware<WeiChatAuthenticationOptions>
+    public class WeiChatAuthenticationMiddleware : AuthenticationMiddleware<WeiChatAuthenticationOptions>
     {
         private readonly ILogger _logger;
         private readonly HttpClient _httpClient;

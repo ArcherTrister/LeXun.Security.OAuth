@@ -50,6 +50,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Owin.Security.Sin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Owin.Security.Alipay", "src\Microsoft.Owin.Security.Alipay\Microsoft.Owin.Security.Alipay.csproj", "{50E0D4A8-D547-444C-8C47-EAC235B7135A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owin.Client", "samples\Owin.Client\Owin.Client.csproj", "{E35E2408-F1AB-4DF8-A5E2-AD2CD31C8EFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -108,6 +110,10 @@ Global
 		{50E0D4A8-D547-444C-8C47-EAC235B7135A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50E0D4A8-D547-444C-8C47-EAC235B7135A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50E0D4A8-D547-444C-8C47-EAC235B7135A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E35E2408-F1AB-4DF8-A5E2-AD2CD31C8EFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E35E2408-F1AB-4DF8-A5E2-AD2CD31C8EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E35E2408-F1AB-4DF8-A5E2-AD2CD31C8EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E35E2408-F1AB-4DF8-A5E2-AD2CD31C8EFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -126,6 +132,7 @@ Global
 		{B370D4B6-1A83-4925-8BA5-53707EFAF835} = {EB47B3AA-768E-4D55-BE24-F961A09AEB1F}
 		{D312333E-D89C-4FD1-9F8A-2FBA4376AAE7} = {EB47B3AA-768E-4D55-BE24-F961A09AEB1F}
 		{50E0D4A8-D547-444C-8C47-EAC235B7135A} = {EB47B3AA-768E-4D55-BE24-F961A09AEB1F}
+		{E35E2408-F1AB-4DF8-A5E2-AD2CD31C8EFE} = {8ADF44C5-9119-4672-9FEA-CA3693239320}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8A3A261A-99BC-4734-B130-203331CC94C4}

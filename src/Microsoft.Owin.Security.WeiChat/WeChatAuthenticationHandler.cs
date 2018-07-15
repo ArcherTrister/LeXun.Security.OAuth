@@ -1,23 +1,20 @@
-﻿using System;
+﻿using Microsoft.Owin.Infrastructure;
+using Microsoft.Owin.Logging;
+using Microsoft.Owin.Security.Infrastructure;
+using Microsoft.Owin.Security.WeiChat.Provider;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.Owin;
-using Microsoft.Owin.Infrastructure;
-using Microsoft.Owin.Logging;
-using Microsoft.Owin.Security;
-using Microsoft.Owin.Security.Infrastructure;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Net.Http.Headers;
-using Microsoft.Owin.Security.WeiChat.Provider;
 using static Microsoft.Owin.Security.WeiChat.WeiChatAuthenticationConstants;
 
 namespace Microsoft.Owin.Security.WeiChat
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class WeiChatAuthenticationHandler : AuthenticationHandler<WeiChatAuthenticationOptions>
     {
@@ -26,7 +23,7 @@ namespace Microsoft.Owin.Security.WeiChat
         private readonly HttpClient _httpClient;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="httpClient"></param>
         /// <param name="logger"></param>
@@ -37,7 +34,7 @@ namespace Microsoft.Owin.Security.WeiChat
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         protected override async Task<AuthenticationTicket> AuthenticateCoreAsync()
@@ -147,7 +144,7 @@ namespace Microsoft.Owin.Security.WeiChat
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         protected override Task ApplyResponseChallengeAsync()
@@ -197,7 +194,6 @@ namespace Microsoft.Owin.Security.WeiChat
                         "&state=" + Uri.EscapeDataString(state) +
                         "&response_type=code";
 
-
             //var cookieOptions = new CookieOptions
             //{
             //    HttpOnly = true,
@@ -213,7 +209,7 @@ namespace Microsoft.Owin.Security.WeiChat
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public override async Task<bool> InvokeAsync()

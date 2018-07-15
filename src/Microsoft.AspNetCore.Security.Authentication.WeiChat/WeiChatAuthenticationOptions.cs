@@ -9,23 +9,23 @@ using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json.Linq;
 using System.Security.Claims;
-using static Microsoft.AspNetCore.Security.Authentication.WeChat.WeChatAuthenticationConstants;
+using static Microsoft.AspNetCore.Security.Authentication.WeiChat.WeiChatAuthenticationConstants;
 
-namespace Microsoft.AspNetCore.Security.Authentication.WeChat
+namespace Microsoft.AspNetCore.Security.Authentication.WeiChat
 {
     /// <summary>
-    /// Defines a set of options used by <see cref="WeChatAuthenticationHandler"/>.
+    /// Defines a set of options used by <see cref="WeiChatAuthenticationHandler"/>.
     /// </summary>
-    public class WeChatAuthenticationOptions : OAuthOptions
+    public class WeiChatAuthenticationOptions : OAuthOptions
     {
-        public WeChatAuthenticationOptions()
+        public WeiChatAuthenticationOptions()
         {
-            ClaimsIssuer = WeChatAuthenticationDefaults.Issuer;
-            CallbackPath = new PathString(WeChatAuthenticationDefaults.CallbackPath);
+            ClaimsIssuer = WeiChatAuthenticationDefaults.Issuer;
+            CallbackPath = new PathString(WeiChatAuthenticationDefaults.CallbackPath);
 
-            AuthorizationEndpoint = WeChatAuthenticationDefaults.AuthorizationEndpoint;
-            TokenEndpoint = WeChatAuthenticationDefaults.TokenEndpoint;
-            UserInformationEndpoint = WeChatAuthenticationDefaults.UserInformationEndpoint;
+            AuthorizationEndpoint = WeiChatAuthenticationDefaults.AuthorizationEndpoint;
+            TokenEndpoint = WeiChatAuthenticationDefaults.TokenEndpoint;
+            UserInformationEndpoint = WeiChatAuthenticationDefaults.UserInformationEndpoint;
 
             Scope.Add("snsapi_login");
             Scope.Add("snsapi_userinfo");
