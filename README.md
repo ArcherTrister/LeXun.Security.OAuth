@@ -9,9 +9,9 @@ LeXun.Security.OAuth
 
 ## 入门
 
-有关**使用ASP.NET Core MVC和支持多个外部提供程序**的完整示例，请参阅 [https://github.com/ArcherTrister/Security.OAuth/tree/dev/samples/AspNetCore.Client](https://github.com/ArcherTrister/Security.OAuth/tree/dev/samples/AspNetCore.Client) 。
+有关**使用ASP.NET Core MVC和支持多个外部提供程序**的完整示例，请参阅 [https://github.com/ArcherTrister/LeXun.Security.OAuth/tree/dev/samples/AspNetCore.Client](https://github.com/ArcherTrister/LeXun.Security.OAuth/tree/dev/samples/AspNetCore.Client) 。
 
-有关**使用ASP.NET MVC和支持多个外部提供程序**的完整示例，请参阅 [https://github.com/ArcherTrister/Security.OAuth/tree/dev/samples/Owin.Client](https://github.com/ArcherTrister/Security.OAuth/tree/dev/samples/Owin.Client) 。
+有关**使用ASP.NET MVC和支持多个外部提供程序**的完整示例，请参阅 [https://github.com/ArcherTrister/LeXun.Security.OAuth/tree/dev/samples/Owin.Client](https://github.com/ArcherTrister/LeXun.Security.OAuth/tree/dev/samples/Owin.Client) 。
 
 
 ## 支持
