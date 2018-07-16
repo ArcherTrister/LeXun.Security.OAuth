@@ -1,36 +1,30 @@
-AspNet.Security.OAuth.Providers
+LeXun.Security.OAuth
 ==================================
 
-**Security.OAuth.Providers** is a **collection of security middleware** that you can use in your **ASP.NET Core** application to support social authentication providers like **[GitHub](https://github.com/)**, **[Foursquare](https://foursquare.com/)** or **[Dropbox](https://www.dropbox.com/)**. It is directly inspired by **[Jerrie Pelser](https://github.com/jerriep)**'s initiative, **[Owin.Security.Providers](https://github.com/ArcherTrister/Security.OAuth)**.
+**LeXun.Security.OAuth** 是一组 **安全中间件，** 您可以在 **ASP.NET Core** ASP.NET Core应用程序中使用它来支持社交身份验证提供程序，
+如 **[QQ](http://wiki.open.qq.com/wiki/%E9%A6%96%E9%A1%B5/)**， **[Baidu](http://developer.baidu.com/ms/oauth/)** 或 **[Alipay](https://openhome.alipay.com/platform/home.htm)**. 它直接受到 **[PinpointTownes](https://github.com/PinpointTownes)** 的倡议 **[AspNet.Security.OAuth.Providers](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers)**。
 
-**The latest official release can be found on [NuGet](https://www.nuget.org/profiles/ArcherTrister) and the nightly builds on [MyGet](https://www.myget.org/gallery/ArcherTrister)**.
-
-
-## Getting started
-
-**Adding social authentication to your application is a breeze** and just requires a few lines in your `Startup` class:
-
-```csharp
-app.UseGitHubAuthentication(options =>
-{
-    options.ClientId = "49e302895d8b09ea5656";
-    options.ClientSecret = "98f1bf028608901e9df91d64ee61536fe562064b";
-});
-```
-
-See [https://github.com/ArcherTrister/Security.OAuth/tree/dev/samples/AspNetCore.Client](https://github.com/ArcherTrister/Security.OAuth/tree/dev/samples/AspNetCore.Client) for a complete sample **using ASP.NET Core MVC and supporting multiple social providers**.
-
-## Contributing
+**最新的正式版本可以在 [NuGet](https://www.nuget.org/profiles/ArcherTrister) 上找到**。
 
 
-We would love it if you could help contributing to this repository.
+## 入门
 
-**Special thanks to our contributors:**
+有关**使用ASP.NET Core MVC和支持多个外部提供程序**的完整示例，请参阅 [https://github.com/ArcherTrister/Security.OAuth/tree/dev/samples/AspNetCore.Client](https://github.com/ArcherTrister/Security.OAuth/tree/dev/samples/AspNetCore.Client) 。
+
+有关**使用ASP.NET MVC和支持多个外部提供程序**的完整示例，请参阅 [https://github.com/ArcherTrister/Security.OAuth/tree/dev/samples/Owin.Client](https://github.com/ArcherTrister/Security.OAuth/tree/dev/samples/Owin.Client) 。
 
 
+## 支持
+
+**需要帮助还是想分享您的想法？**不要犹豫，加入我们的Gitter或在StackOverflow上提出您的问题：  Don't hesitate to join us on Gitter or ask your question on StackOverflow:
+
+- **Issues: [https://github.com/ArcherTrister/LeXun.Security.OAuth/issues](https://github.com/ArcherTrister/LeXun.Security.OAuth/issues)**
+
+## 贡献者
+
+**LeXun.Security.OAuth**由ArcherTrister积极维护。
 
 
+## 执照
 
-## License
-
-This project is licensed under the **Apache License**. This means that you can use, modify and distribute it freely. See [http://www.apache.org/licenses/LICENSE-2.0.html](http://www.apache.org/licenses/LICENSE-2.0.html) for more details.
+该项目根据 **Apache许可证授权**。 这意味着您可以自由使用，修改和分发它。有关详细信息，请参阅 [http://www.apache.org/licenses/LICENSE-2.0.html](http://www.apache.org/licenses/LICENSE-2.0.html) for more details.
