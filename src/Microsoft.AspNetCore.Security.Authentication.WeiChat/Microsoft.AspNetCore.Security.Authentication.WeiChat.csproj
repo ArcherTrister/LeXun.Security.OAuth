@@ -24,7 +24,7 @@
     <!--标记-->
     <PackageTags>aspnetcore;authentication;oauth;security;weichat</PackageTags>
     <!--发行说明-->
-    <PackageReleaseNotes>修改 signin-weixin 为 signin-weichat</PackageReleaseNotes>
+    <PackageReleaseNotes>修改存储库路径</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

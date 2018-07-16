@@ -24,7 +24,7 @@
     <!--标记-->
     <PackageTags>aspnetcore;authentication;oauth;security;qq</PackageTags>
     <!--发行说明-->
-    <PackageReleaseNotes>Add QQ Provider</PackageReleaseNotes>
+    <PackageReleaseNotes>修改存储库路径</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

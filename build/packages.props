@@ -16,13 +16,13 @@
     <!--版权-->
     <Copyright>Copyright © LeXun 2018</Copyright>
     <!--许可证URL-->
-    <PackageLicenseUrl>https://github.com/ArcherTrister/Security.OAuth/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl>https://github.com/ArcherTrister/LeXun.Security.OAuth/blob/master/LICENSE</PackageLicenseUrl>
     <!--项目URL-->
     <PackageProjectUrl>http://github.lxking.cn</PackageProjectUrl>
     <!--图标URL-->
     <PackageIconUrl>https://oauth.net/images/oauth-2-sm.png</PackageIconUrl>
     <!--存储库URL-->
-    <RepositoryUrl>https://github.com/ArcherTrister/Security.OAuth</RepositoryUrl>
+    <RepositoryUrl>https://github.com/ArcherTrister/LeXun.Security.OAuth</RepositoryUrl>
     <!--存储库类型-->
     <RepositoryType>git</RepositoryType>
     <!--在生成期间自动生成包-->

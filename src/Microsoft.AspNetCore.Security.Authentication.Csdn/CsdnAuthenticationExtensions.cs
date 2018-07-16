@@ -1,6 +1,6 @@
 ﻿/*
  * Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
- * See https://github.com/ArcherTrister/Security.OAuth
+ * See https://github.com/ArcherTrister/LeXun.Security.OAuth
  * for more information concerning the license and the contributors participating to this project.
  */
 
@@ -45,6 +45,13 @@ namespace Microsoft.Extensions.DependencyInjection
         /// Adds <see cref="CsdnAuthenticationHandler"/> to the specified
         /// <see cref="AuthenticationBuilder"/>, which enables Csdn authentication capabilities.
         /// </summary>
+        /// <example>
+        /// .AddCsdn（options  =>
+        /// {
+        ///     options.ClientId = configuration["Authentication:Csdn:AppId"];
+        ///     options.ClientSecret = configuration["Authentication:Csdn:AppSecret"];
+        /// }
+        /// </example>
         /// <param name="builder">The authentication builder.</param>
         /// <param name="scheme">The authentication scheme associated with this instance.</param>
         /// <param name="configuration">The delegate used to configure the Csdn options.</param>
@@ -60,6 +67,13 @@ namespace Microsoft.Extensions.DependencyInjection
         /// Adds <see cref="CsdnAuthenticationHandler"/> to the specified
         /// <see cref="AuthenticationBuilder"/>, which enables Csdn authentication capabilities.
         /// </summary>
+        /// <example>
+        /// .AddCsdn（options  =>
+        /// {
+        ///     options.ClientId = configuration["Authentication:Csdn:AppId"];
+        ///     options.ClientSecret = configuration["Authentication:Csdn:AppSecret"];
+        /// }
+        /// </example>
         /// <param name="builder">The authentication builder.</param>
         /// <param name="scheme">The authentication scheme associated with this instance.</param>
         /// <param name="caption">The optional display name associated with this instance.</param>
