@@ -1,0 +1,32 @@
+﻿@model ExternalLoginViewModel
+
+<h2>注册【Register】</h2>
+<h4>关联你的 @ViewData["LoginProvider"]帐户。【Associate your @ViewData["LoginProvider"] account.】</h4>
+<hr />
+
+<p class="text-info">
+    您已成功通过<strong>@ViewData["LoginProvider"]</strong>认证。
+    请在下方为此网站输入电子邮件地址，然后单击注册按钮以完成登录。
+    <br />
+    【You've successfully authenticated with <strong>@ViewData["LoginProvider"]</strong>.
+    Please enter an email address for this site below and click the Register button to finish
+    logging in.】
+</p>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ExternalLoginConfirmation" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-default">注册【Register】</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

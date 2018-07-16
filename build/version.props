@@ -1,0 +1,13 @@
+<Project>
+
+  <PropertyGroup>
+    <VersionPrefix>2.0.1</VersionPrefix>
+    <VersionSuffix></VersionSuffix>
+    <VersionSuffix Condition=" '$(VersionSuffix)' != '' AND '$(BuildNumber)' != '' ">$(VersionSuffix)-$(BuildNumber)</VersionSuffix>
+    <!--程序集版本-->
+    <!--<AssemblyVersion>1.0.0.0</AssemblyVersion>-->
+    <!--程序集文件版本-->
+    <!--<FileVersion>1.0.0.0</FileVersion>-->
+  </PropertyGroup>
+  
+</Project>

@@ -1,0 +1,24 @@
+#C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+
+nuget pack $(ProjectFileName) -Properties Configuration=Release;Author=ArcherTrister;Owner=ArcherTrister;AssemblyName=LeXun.$(ProjectName) -OutputDirectory $(ProjectDir)$(ProjectName)\bin\Release\publish
+
+nuget pack $(ProjectFileName) -Build -Properties Configuration=Release;Authors=ArcherTrister;Owners=ArcherTrister -OutputDirectory $(ProjectDir)$(ProjectName)\bin\Release\publish
+
+
+nuget pack $(ProjectFileName) -Build -OutputDirectory $(ProjectDir)$(ProjectName)\bin\Release\publish -Properties Owners=ArcherTrister -Properties Configuration=Release -Properties Authors=ArcherTrister -Properties PackageId=LeXun.$(ProjectName)
+
+
+nuget pack $(ProjectFileName) -Build -OutputDirectory $(ProjectDir)$(ProjectName)\bin\Release\publish -Properties Configuration=Release -Properties Authors=ArcherTrister -Properties PackageId=LeXun.$(ProjectName)
+
+
+
+nuget pack $(ProjectFileName) -Build -Symbols -MSBuildVersion 12 -Properties Configuration=Release;owners=ArcherTrister;version="1.0.5" -OutputDirectory $(ProjectDir)$(ProjectName)\bin\Release\publish
+
+
+
+
+$(ProjectDir)
+
+
+
+msbuild G:\Source\Security.OAuth\src\Microsoft.Owin.Security.Baidu\Microsoft.Owin.Security.Baidu.csproj /p:OutputType=Library /p:Satellite_TargetType=library /p:Configuration=Release /p:SourceLinkCreate=true /p:Platform="Any CPU" /p:OutputPath=bin\Debug

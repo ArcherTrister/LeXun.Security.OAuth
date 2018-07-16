@@ -1,0 +1,24 @@
+<Project>
+
+  <Import Project="dependencies.props" />
+  <Import Project="version.props" />
+
+  <PropertyGroup>
+    <!--IDE0045/IDE0046	'if' statement can be simplified-->
+    <!--IDE0017	可以简化对象初始化-->
+    <!--IDE0018	可以内联变量声明-->
+    <!--IDE0019	使用模式匹配-->
+    <!--CS1591	缺少对公共可见类型或成员“AlipayConstants”的 XML 注释-->
+    <!--CS0108	“AlipaySocialBaseRelationFriendsQueryModel.GetType”隐藏继承的成员“object.GetType()”。如果是有意隐藏，请使用关键字 new。-->
+    <!--CS1570	XML 注释出现 XML 格式错误-->
+    <!--CS1572	XML 注释中有“encoding”的 param 标记，但是没有该名称的参数-->
+    <!--CS1573	参数“outStream”在“AlipayMobilePublicMultiMediaClient.GetResponseAsStream(Stream, HttpWebResponse)”的 XML 注释中没有匹配的 param 标记(但其他参数有)-->
+    <!--CS1587	XML 注释没有放在有效语言元素上-->
+    <!--IDE1006	命名规则冲突: 这些字必须以大写字符开头: sendTradeQuery	Alipay.AopSdk.F2FPay-->
+    <NoWarn>$(NoWarn);CS0108,CS1570,CS1572,CS1573,CS1591,IDE0017,IDE0018,IDE0019</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+</Project>
