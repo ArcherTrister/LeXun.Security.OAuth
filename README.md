@@ -1,30 +1,30 @@
 LeXun.Security.OAuth
 ==================================
 
-**LeXun.Security.OAuth** ÊÇÒ»×é **°²È«ÖĞ¼ä¼ş£¬** Äú¿ÉÒÔÔÚ **ASP.NET Core** ASP.NET CoreÓ¦ÓÃ³ÌĞòÖĞÊ¹ÓÃËüÀ´Ö§³ÖÉç½»Éí·İÑéÖ¤Ìá¹©³ÌĞò£¬
-Èç **[QQ](http://wiki.open.qq.com/wiki/%E9%A6%96%E9%A1%B5/)**£¬ **[Baidu](http://developer.baidu.com/ms/oauth/)** »ò **[Alipay](https://openhome.alipay.com/platform/home.htm)**. ËüÖ±½ÓÊÜµ½ **[PinpointTownes](https://github.com/PinpointTownes)** µÄ³«Òé **[AspNet.Security.OAuth.Providers](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers)**¡£
+**LeXun.Security.OAuth** æ˜¯ä¸€ç»„ **å®‰å…¨ä¸­é—´ä»¶ï¼Œ** æ‚¨å¯ä»¥åœ¨ **ASP.NET Core** ASP.NET Coreåº”ç”¨ç¨‹åºä¸­ä½¿ç”¨å®ƒæ¥æ”¯æŒç¤¾äº¤èº«ä»½éªŒè¯æä¾›ç¨‹åºï¼Œ
+å¦‚ **[QQ](http://wiki.open.qq.com/wiki/%E9%A6%96%E9%A1%B5/)**ï¼Œ **[Baidu](http://developer.baidu.com/ms/oauth/)** æˆ– **[Alipay](https://openhome.alipay.com/platform/home.htm)**. å®ƒç›´æ¥å—åˆ° **[PinpointTownes](https://github.com/PinpointTownes)** çš„å€¡è®® **[AspNet.Security.OAuth.Providers](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers)**ã€‚
 
-**×îĞÂµÄÕıÊ½°æ±¾¿ÉÒÔÔÚ [NuGet](https://www.nuget.org/profiles/ArcherTrister) ÉÏÕÒµ½**¡£
-
-
-## ÈëÃÅ
-
-ÓĞ¹Ø**Ê¹ÓÃASP.NET Core MVCºÍÖ§³Ö¶à¸öÍâ²¿Ìá¹©³ÌĞò**µÄÍêÕûÊ¾Àı£¬Çë²ÎÔÄ [https://github.com/ArcherTrister/Security.OAuth/tree/dev/samples/AspNetCore.Client](https://github.com/ArcherTrister/Security.OAuth/tree/dev/samples/AspNetCore.Client) ¡£
-
-ÓĞ¹Ø**Ê¹ÓÃASP.NET MVCºÍÖ§³Ö¶à¸öÍâ²¿Ìá¹©³ÌĞò**µÄÍêÕûÊ¾Àı£¬Çë²ÎÔÄ [https://github.com/ArcherTrister/Security.OAuth/tree/dev/samples/Owin.Client](https://github.com/ArcherTrister/Security.OAuth/tree/dev/samples/Owin.Client) ¡£
+**æœ€æ–°çš„æ­£å¼ç‰ˆæœ¬å¯ä»¥åœ¨ [NuGet](https://www.nuget.org/profiles/ArcherTrister) ä¸Šæ‰¾åˆ°**ã€‚
 
 
-## Ö§³Ö
+## å…¥é—¨
 
-**ĞèÒª°ïÖú»¹ÊÇÏë·ÖÏíÄúµÄÏë·¨£¿**²»ÒªÓÌÔ¥£¬¼ÓÈëÎÒÃÇµÄGitter»òÔÚStackOverflowÉÏÌá³öÄúµÄÎÊÌâ£º  Don't hesitate to join us on Gitter or ask your question on StackOverflow:
+æœ‰å…³**ä½¿ç”¨ASP.NET Core MVCå’Œæ”¯æŒå¤šä¸ªå¤–éƒ¨æä¾›ç¨‹åº**çš„å®Œæ•´ç¤ºä¾‹ï¼Œè¯·å‚é˜… [https://github.com/ArcherTrister/Security.OAuth/tree/dev/samples/AspNetCore.Client](https://github.com/ArcherTrister/Security.OAuth/tree/dev/samples/AspNetCore.Client) ã€‚
+
+æœ‰å…³**ä½¿ç”¨ASP.NET MVCå’Œæ”¯æŒå¤šä¸ªå¤–éƒ¨æä¾›ç¨‹åº**çš„å®Œæ•´ç¤ºä¾‹ï¼Œè¯·å‚é˜… [https://github.com/ArcherTrister/Security.OAuth/tree/dev/samples/Owin.Client](https://github.com/ArcherTrister/Security.OAuth/tree/dev/samples/Owin.Client) ã€‚
+
+
+## æ”¯æŒ
+
+**éœ€è¦å¸®åŠ©è¿˜æ˜¯æƒ³åˆ†äº«æ‚¨çš„æƒ³æ³•ï¼Ÿ** ä¸è¦çŠ¹è±«ï¼ŒåŠ å…¥æˆ‘ä»¬çš„Gitteræˆ–åœ¨StackOverflowä¸Šæå‡ºæ‚¨çš„é—®é¢˜ï¼š
 
 - **Issues: [https://github.com/ArcherTrister/LeXun.Security.OAuth/issues](https://github.com/ArcherTrister/LeXun.Security.OAuth/issues)**
 
-## ¹±Ï×Õß
+## è´¡çŒ®è€…
 
-**LeXun.Security.OAuth**ÓÉArcherTrister»ı¼«Î¬»¤¡£
+**LeXun.Security.OAuth**ç”±ArcherTristerç§¯æç»´æŠ¤ã€‚
 
 
-## Ö´ÕÕ
+## æ‰§ç…§
 
-¸ÃÏîÄ¿¸ù¾İ **ApacheĞí¿ÉÖ¤ÊÚÈ¨**¡£ ÕâÒâÎ¶×ÅÄú¿ÉÒÔ×ÔÓÉÊ¹ÓÃ£¬ĞŞ¸ÄºÍ·Ö·¢Ëü¡£ÓĞ¹ØÏêÏ¸ĞÅÏ¢£¬Çë²ÎÔÄ [http://www.apache.org/licenses/LICENSE-2.0.html](http://www.apache.org/licenses/LICENSE-2.0.html) for more details.
+è¯¥é¡¹ç›®æ ¹æ® **Apacheè®¸å¯è¯æˆæƒ**ã€‚ è¿™æ„å‘³ç€æ‚¨å¯ä»¥è‡ªç”±ä½¿ç”¨ï¼Œä¿®æ”¹å’Œåˆ†å‘å®ƒã€‚æœ‰å…³è¯¦ç»†ä¿¡æ¯ï¼Œè¯·å‚é˜… [http://www.apache.org/licenses/LICENSE-2.0.html](http://www.apache.org/licenses/LICENSE-2.0.html) for more details.
