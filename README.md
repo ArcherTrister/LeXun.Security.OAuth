@@ -6,6 +6,20 @@ LeXun.Security.OAuth
 
 **最新的正式版本可以在 [NuGet](https://www.nuget.org/profiles/ArcherTrister) 上找到**。
 
+## 各个组件说明
+
+组件名  | 说明 | 版本号 
+-------- | :------------  | :------------ 
+LeXun.Microsoft.AspNetCore.Security.Authentication.Alipay | 用于.NET Core的支付宝 OAuth2.0登录  |  [![Latest version](https://img.shields.io/nuget/v/LeXun.Microsoft.AspNetCore.Security.Authentication.Alipay.svg)](https://www.nuget.org/packages/LeXun.Microsoft.AspNetCore.Security.Authentication.Alipay/)
+LeXun.Microsoft.AspNetCore.Security.Authentication.Baidu | 用于.NET Core的百度 OAuth2.0登录  |  [![Latest version](https://img.shields.io/nuget/v/LeXun.Microsoft.AspNetCore.Security.Authentication.Baidu.svg)](https://www.nuget.org/packages/LeXun.Microsoft.AspNetCore.Security.Authentication.Baidu/)
+LeXun.Microsoft.AspNetCore.Security.Authentication.QQ | 用于.NET Core的QQ OAuth2.0登录  |  [![Latest version](https://img.shields.io/nuget/v/LeXun.Microsoft.AspNetCore.Security.Authentication.QQ.svg)](https://www.nuget.org/packages/LeXun.Microsoft.AspNetCore.Security.Authentication.QQ/)
+LeXun.Microsoft.AspNetCore.Security.Authentication.WeiChat | 用于.NET Core的微信 OAuth2.0登录  |  [![Latest version](https://img.shields.io/nuget/v/LeXun.Microsoft.AspNetCore.Security.Authentication.WeiChat.svg)](https://www.nuget.org/packages/LeXun.Microsoft.AspNetCore.Security.Authentication.WeiChat/)
+
+LeXun.Microsoft.Owin.Security.Baidu | 用于.NET Framework的百度 OAuth2.0登录  |  [![Latest version](https://img.shields.io/nuget/v/LeXun.Microsoft.Owin.Security.Baidu.svg)](https://www.nuget.org/packages/LeXun.Microsoft.Owin.Security.Baidu/)
+LeXun.Microsoft.Owin.Security.QQ | 用于.NET Framework的QQ OAuth2.0登录  |  [![Latest version](https://img.shields.io/nuget/v/LeXun.Microsoft.Owin.Security.QQ.svg)](https://www.nuget.org/packages/LeXun.Microsoft.Owin.Security.QQ/)
+LeXun.Microsoft.Owin.Security.WeiChat | 用于.NET Framework的微信 OAuth2.0登录  |  [![Latest version](https://img.shields.io/nuget/v/LeXun.Microsoft.Owin.Security.WeiChat.svg)](https://www.nuget.org/packages/LeXun.Microsoft.Owin.Security.WeiChat/)
+
+
 
 ## 入门
 
