@@ -88,14 +88,19 @@ namespace Microsoft.Owin.Security.Alipay
         }
 
         /// <summary>
-        /// Gets or sets the Alipay supplied API Key
+        /// Gets or sets the Alipay supplied AppId
         /// </summary>
         public string AppId { get; set; }
 
         /// <summary>
-        /// Gets or sets the Alipay supplied Secret Key
+        /// Gets or sets the Alipay supplied AppSecret
         /// </summary>
         public string AppSecret { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Alipay supplied AlipayPublicKey
+        /// </summary>
+        public string AlipayPublicKey { get; set; }
 
         /// <summary>
         /// A list of permissions to request.

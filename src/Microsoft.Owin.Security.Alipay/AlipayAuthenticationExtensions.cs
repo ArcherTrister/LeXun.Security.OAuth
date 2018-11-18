@@ -34,12 +34,13 @@ namespace Microsoft.Owin.Security.Alipay
         /// <param name="appId">应用ID</param>
         /// <param name="appSecret">应用密钥</param>
         /// <returns></returns>
-        public static IAppBuilder UseAlipayAuthentication(this IAppBuilder app, string appId, string appSecret)
+        public static IAppBuilder UseAlipayAuthentication(this IAppBuilder app, string appId, string appSecret, string alipayPublicKey)
         {
             return app.UseAlipayAuthentication(new AlipayAuthenticationOptions
             {
                 AppId = appId,
-                AppSecret = appSecret
+                AppSecret = appSecret,
+                AlipayPublicKey = alipayPublicKey
             });
         }
     }

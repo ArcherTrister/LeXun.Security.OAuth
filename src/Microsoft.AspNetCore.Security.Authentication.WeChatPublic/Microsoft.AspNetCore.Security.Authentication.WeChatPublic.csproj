@@ -10,9 +10,9 @@
     <!--产品-->
     <Product>Security.OAuth</Product>
     <!--说明-->
-    <Description>ASP.NET Core security middleware enabling Alipay authentication.</Description>
+    <Description>ASP.NET Core security middleware enabling WeChatPublic authentication.</Description>
     <!--包ID-->
-    <PackageId>LeXun.Microsoft.AspNetCore.Security.Authentication.Alipay</PackageId>
+    <PackageId>LeXun.Microsoft.AspNetCore.Security.Authentication.WeChatPublic</PackageId>
     <!--标题 如果未指定，则改为使用包 ID-->
     <!--<Title></Title>-->
     <!--包版本-->
@@ -22,14 +22,13 @@
     <!--公司-->
     <Company>LeXun</Company>
     <!--标记-->
-    <PackageTags>aspnetcore;authentication;oauth;security;alipay</PackageTags>
+    <PackageTags>aspnetcore;authentication;oauth;security;wechatpublic</PackageTags>
     <!--发行说明-->
-    <PackageReleaseNotes>修改存储库路径</PackageReleaseNotes>
+    <PackageReleaseNotes>首次发布</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="$(JetBrainsVersion)" PrivateAssets="All" />
-    <PackageReference Include="LeXun.Aliyun.AopSdk.Core" Version="2.3.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OAuth" Version="$(AspNetCoreVersion)" />
   </ItemGroup>
 

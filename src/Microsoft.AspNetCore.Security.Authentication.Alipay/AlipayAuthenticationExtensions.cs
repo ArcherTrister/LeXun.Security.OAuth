@@ -46,12 +46,14 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <see cref="AuthenticationBuilder"/>, which enables Alipay authentication capabilities.
         /// </summary>
         /// <example>
+        /// <code>
         /// .AddAlipay（options  =>
         /// {
         ///     options.ClientId = configuration["Authentication:Alipay:AppId"];
         ///     options.ClientSecret = configuration["Authentication:Alipay:MerchantPrivateKey"];
         ///     options.AlipayPublicKey = configuration["Authentication:Alipay:AlipayPublicKey"];
         /// }
+        /// </code>
         /// </example>
         /// <param name="builder">The authentication builder.</param>
         /// <param name="scheme">The authentication scheme associated with this instance.</param>
@@ -69,12 +71,14 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <see cref="AuthenticationBuilder"/>, which enables Alipay authentication capabilities.
         /// </summary>
         /// <example>
+        /// <code>
         /// .AddAlipay（options  =>
         /// {
         ///     options.ClientId = configuration["Authentication:Alipay:AppId"];
         ///     options.ClientSecret = configuration["Authentication:Alipay:MerchantPrivateKey"];
         ///     options.AlipayPublicKey = configuration["Authentication:Alipay:AlipayPublicKey"];
         /// }
+        /// </code>
         /// </example>
         /// <param name="builder">The authentication builder.</param>
         /// <param name="scheme">The authentication scheme associated with this instance.</param>

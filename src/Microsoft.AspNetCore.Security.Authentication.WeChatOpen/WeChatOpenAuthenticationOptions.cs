@@ -9,23 +9,23 @@ using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json.Linq;
 using System.Security.Claims;
-using static Microsoft.AspNetCore.Security.Authentication.WeiChat.WeiChatAuthenticationConstants;
+using static Microsoft.AspNetCore.Security.Authentication.WeChatOpen.WeChatOpenAuthenticationConstants;
 
-namespace Microsoft.AspNetCore.Security.Authentication.WeiChat
+namespace Microsoft.AspNetCore.Security.Authentication.WeChatOpen
 {
     /// <summary>
-    /// Defines a set of options used by <see cref="WeiChatAuthenticationHandler"/>.
+    /// Defines a set of options used by <see cref="WeChatOpenAuthenticationHandler"/>.
     /// </summary>
-    public class WeiChatAuthenticationOptions : OAuthOptions
+    public class WeChatOpenAuthenticationOptions : OAuthOptions
     {
-        public WeiChatAuthenticationOptions()
+        public WeChatOpenAuthenticationOptions()
         {
-            ClaimsIssuer = WeiChatAuthenticationDefaults.Issuer;
-            CallbackPath = new PathString(WeiChatAuthenticationDefaults.CallbackPath);
+            ClaimsIssuer = WeChatOpenAuthenticationDefaults.Issuer;
+            CallbackPath = new PathString(WeChatOpenAuthenticationDefaults.CallbackPath);
 
-            AuthorizationEndpoint = WeiChatAuthenticationDefaults.AuthorizationEndpoint;
-            TokenEndpoint = WeiChatAuthenticationDefaults.TokenEndpoint;
-            UserInformationEndpoint = WeiChatAuthenticationDefaults.UserInformationEndpoint;
+            AuthorizationEndpoint = WeChatOpenAuthenticationDefaults.AuthorizationEndpoint;
+            TokenEndpoint = WeChatOpenAuthenticationDefaults.TokenEndpoint;
+            UserInformationEndpoint = WeChatOpenAuthenticationDefaults.UserInformationEndpoint;
 
             Scope.Add("snsapi_login");
             Scope.Add("snsapi_userinfo");
@@ -33,7 +33,7 @@ namespace Microsoft.AspNetCore.Security.Authentication.WeiChat
             ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "unionid");
             ClaimActions.MapJsonKey(ClaimTypes.Name, "nickname");
             ClaimActions.MapJsonKey(ClaimTypes.Gender, "sex", ClaimValueTypes.Integer);
-
+            ClaimActions.MapJsonKey(Claims.Unionid, "unionid");
             ClaimActions.MapJsonKey(Claims.OpenId, "openid");
             ClaimActions.MapJsonKey(Claims.NickName, "nickname");
             ClaimActions.MapJsonKey(Claims.Language, "language");

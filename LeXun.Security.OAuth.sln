@@ -24,7 +24,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.AspNetCore.Securi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.AspNetCore.Security.Authentication.QQ", "src\Microsoft.AspNetCore.Security.Authentication.QQ\Microsoft.AspNetCore.Security.Authentication.QQ.csproj", "{753D6F92-205A-4A63-8BA0-E1CF7B9BB10F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.AspNetCore.Security.Authentication.WeiChat", "src\Microsoft.AspNetCore.Security.Authentication.WeiChat\Microsoft.AspNetCore.Security.Authentication.WeiChat.csproj", "{194DCE1E-E1E3-42AB-A282-40D337C91FF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.AspNetCore.Security.Authentication.WeChat", "src\Microsoft.AspNetCore.Security.Authentication.WeiChat\Microsoft.AspNetCore.Security.Authentication.WeChat.csproj", "{194DCE1E-E1E3-42AB-A282-40D337C91FF3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore.Client", "samples\AspNetCore.Client\AspNetCore.Client.csproj", "{C8973989-DD3C-4E51-BA5B-0BB9BBDDD707}"
 EndProject
@@ -51,6 +51,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Owin.Security.Alipay", "src\Microsoft.Owin.Security.Alipay\Microsoft.Owin.Security.Alipay.csproj", "{50E0D4A8-D547-444C-8C47-EAC235B7135A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owin.Client", "samples\Owin.Client\Owin.Client.csproj", "{E35E2408-F1AB-4DF8-A5E2-AD2CD31C8EFE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.AspNetCore.Security.Authentication.WeChatOpen", "src\Microsoft.AspNetCore.Security.Authentication.WeChatOpen\Microsoft.AspNetCore.Security.Authentication.WeChatOpen.csproj", "{57F0FC29-3414-42E4-AD07-308101C32692}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.AspNetCore.Security.Authentication.WeChatPublic", "src\Microsoft.AspNetCore.Security.Authentication.WeChatPublic\Microsoft.AspNetCore.Security.Authentication.WeChatPublic.csproj", "{6E15B17B-91A5-435C-818F-D909BC116619}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -114,6 +118,14 @@ Global
 		{E35E2408-F1AB-4DF8-A5E2-AD2CD31C8EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E35E2408-F1AB-4DF8-A5E2-AD2CD31C8EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E35E2408-F1AB-4DF8-A5E2-AD2CD31C8EFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57F0FC29-3414-42E4-AD07-308101C32692}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57F0FC29-3414-42E4-AD07-308101C32692}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57F0FC29-3414-42E4-AD07-308101C32692}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57F0FC29-3414-42E4-AD07-308101C32692}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E15B17B-91A5-435C-818F-D909BC116619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E15B17B-91A5-435C-818F-D909BC116619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E15B17B-91A5-435C-818F-D909BC116619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E15B17B-91A5-435C-818F-D909BC116619}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -133,6 +145,8 @@ Global
 		{D312333E-D89C-4FD1-9F8A-2FBA4376AAE7} = {EB47B3AA-768E-4D55-BE24-F961A09AEB1F}
 		{50E0D4A8-D547-444C-8C47-EAC235B7135A} = {EB47B3AA-768E-4D55-BE24-F961A09AEB1F}
 		{E35E2408-F1AB-4DF8-A5E2-AD2CD31C8EFE} = {8ADF44C5-9119-4672-9FEA-CA3693239320}
+		{57F0FC29-3414-42E4-AD07-308101C32692} = {EB47B3AA-768E-4D55-BE24-F961A09AEB1F}
+		{6E15B17B-91A5-435C-818F-D909BC116619} = {EB47B3AA-768E-4D55-BE24-F961A09AEB1F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8A3A261A-99BC-4734-B130-203331CC94C4}

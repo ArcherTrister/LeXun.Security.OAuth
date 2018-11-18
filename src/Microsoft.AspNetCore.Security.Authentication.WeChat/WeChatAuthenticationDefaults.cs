@@ -7,22 +7,22 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.OAuth;
 
-namespace Microsoft.AspNetCore.Security.Authentication.WeiChat
+namespace Microsoft.AspNetCore.Security.Authentication.WeChat
 {
     /// <summary>
-    /// Default values for WeiChat authentication.
+    /// Default values for WeChat authentication.
     /// </summary>
-    public static class WeiChatAuthenticationDefaults
+    public static class WeChatAuthenticationDefaults
     {
         /// <summary>
         /// Default value for <see cref="AuthenticationScheme.Name"/>.
         /// </summary>
-        public const string AuthenticationScheme = "WeiChat";
+        public const string AuthenticationScheme = "WeChat";
 
         /// <summary>
         /// Default value for <see cref="AuthenticationScheme.DisplayName"/>.
         /// </summary>
-        public const string DisplayName = "WeiChat";
+        public const string DisplayName = "WeChat";
 
         /// <summary>
         /// Default value for <see cref="RemoteAuthenticationOptions.CallbackPath"/>.
@@ -32,7 +32,7 @@ namespace Microsoft.AspNetCore.Security.Authentication.WeiChat
         /// <summary>
         /// Default value for <see cref="AuthenticationSchemeOptions.ClaimsIssuer"/>.
         /// </summary>
-        public const string Issuer = "WeiChat";
+        public const string Issuer = "WeChat";
 
         /// <summary>
         /// Default value for <see cref="OAuthOptions.AuthorizationEndpoint"/>.

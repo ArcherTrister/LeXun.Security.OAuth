@@ -83,6 +83,7 @@
     <ProjectReference Include="..\..\src\Microsoft.AspNetCore.Security.Authentication.Csdn\Microsoft.AspNetCore.Security.Authentication.Csdn.csproj" />
     <ProjectReference Include="..\..\src\Microsoft.AspNetCore.Security.Authentication.QQ\Microsoft.AspNetCore.Security.Authentication.QQ.csproj" />
     <ProjectReference Include="..\..\src\Microsoft.AspNetCore.Security.Authentication.Sina\Microsoft.AspNetCore.Security.Authentication.Sina.csproj" />
-    <ProjectReference Include="..\..\src\Microsoft.AspNetCore.Security.Authentication.WeiChat\Microsoft.AspNetCore.Security.Authentication.WeiChat.csproj" />
+    <ProjectReference Include="..\..\src\Microsoft.AspNetCore.Security.Authentication.WeChatOpen\Microsoft.AspNetCore.Security.Authentication.WeChatOpen.csproj" />
+    <ProjectReference Include="..\..\src\Microsoft.AspNetCore.Security.Authentication.WeChatPublic\Microsoft.AspNetCore.Security.Authentication.WeChatPublic.csproj" />
   </ItemGroup>
 </Project>

@@ -86,6 +86,15 @@ namespace Microsoft.Owin.Security.Alipay
                     new KeyValuePair<string, string>("client_secret", Options.AppSecret)
                 };
 
+                var alipayRequest = new AlipaySystemOauthTokenRequest
+                {
+                    Code = code,
+                    GrantType = "authorization_code"
+                    //GetApiName()
+                };
+
+                var alipayResponse = await _alipayClient.ExecuteAsync(alipayRequest);
+
                 // Request the token
                 var tokenResponse =
                     await _httpClient.PostAsync(Options.TokenEndPoint, new FormUrlEncodedContent(body));

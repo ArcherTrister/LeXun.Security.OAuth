@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
+using Microsoft.Owin.Security.Alipay;
 using Microsoft.Owin.Security.Baidu;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
@@ -83,6 +84,11 @@ namespace Owin.Client
                 AppId = "",
                 AppSecret = "",
                 //CallbackPath = new PathString("")
+            });
+            app.UseAlipayAuthentication(new AlipayAuthenticationOptions() {
+ AppId = "",
+ AppSecret = "",
+                AlipayPublicKey = ""
             });
         }
     }

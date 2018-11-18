@@ -245,10 +245,15 @@ namespace AspNetCore.Client
                 options.ClientId = configuration["Authentication:QQ:AppId"];
                 options.ClientSecret = configuration["Authentication:QQ:AppKey"];
             })
-            .AddWeChat(options =>
+            .AddWeChatOpen(options =>
             {
-                options.ClientId = configuration["Authentication:WeChat:AppId"];
-                options.ClientSecret = configuration["Authentication:WeChat:AppSecret"];
+                options.ClientId = configuration["Authentication:WeChatOpen:AppId"];
+                options.ClientSecret = configuration["Authentication:WeChatOpen:AppSecret"];
+            })
+            .AddWeChatPublic(options =>
+            {
+                options.ClientId = configuration["Authentication:WeChatPublic:AppId"];
+                options.ClientSecret = configuration["Authentication:WeChatPublic:AppSecret"];
             })
             .AddAlipay(options =>
             {

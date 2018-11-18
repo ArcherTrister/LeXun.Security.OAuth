@@ -6,85 +6,85 @@
 
 using JetBrains.Annotations;
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Security.Authentication.WeiChat;
+using Microsoft.AspNetCore.Security.Authentication.WeChat;
 using System;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
     /// <summary>
-    /// Extension methods to add WeiChat authentication capabilities to an HTTP application pipeline.
+    /// Extension methods to add WeChat authentication capabilities to an HTTP application pipeline.
     /// </summary>
-    public static class WeiChatAuthenticationExtensions
+    public static class WeChatAuthenticationExtensions
     {
         /// <summary>
-        /// Adds <see cref="WeiChatAuthenticationHandler"/> to the specified
-        /// <see cref="AuthenticationBuilder"/>, which enables WeiChat authentication capabilities.
+        /// Adds <see cref="WeChatAuthenticationHandler"/> to the specified
+        /// <see cref="AuthenticationBuilder"/>, which enables WeChat authentication capabilities.
         /// </summary>
         /// <param name="builder">The authentication builder.</param>
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public static AuthenticationBuilder AddWeChat([NotNull] this AuthenticationBuilder builder)
         {
-            return builder.AddWeChat(WeiChatAuthenticationDefaults.AuthenticationScheme, options => { });
+            return builder.AddWeChat(WeChatAuthenticationDefaults.AuthenticationScheme, options => { });
         }
 
         /// <summary>
-        /// Adds <see cref="WeiChatAuthenticationHandler"/> to the specified
-        /// <see cref="AuthenticationBuilder"/>, which enables WeiChat authentication capabilities.
+        /// Adds <see cref="WeChatAuthenticationHandler"/> to the specified
+        /// <see cref="AuthenticationBuilder"/>, which enables WeChat authentication capabilities.
         /// </summary>
         /// <param name="builder">The authentication builder.</param>
         /// <param name="configuration">The delegate used to configure the OpenID 2.0 options.</param>
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public static AuthenticationBuilder AddWeChat(
             [NotNull] this AuthenticationBuilder builder,
-            [NotNull] Action<WeiChatAuthenticationOptions> configuration)
+            [NotNull] Action<WeChatAuthenticationOptions> configuration)
         {
-            return builder.AddWeChat(WeiChatAuthenticationDefaults.AuthenticationScheme, configuration);
+            return builder.AddWeChat(WeChatAuthenticationDefaults.AuthenticationScheme, configuration);
         }
 
         /// <summary>
-        /// Adds <see cref="WeiChatAuthenticationHandler"/> to the specified
-        /// <see cref="AuthenticationBuilder"/>, which enables WeiChat authentication capabilities.
+        /// Adds <see cref="WeChatAuthenticationHandler"/> to the specified
+        /// <see cref="AuthenticationBuilder"/>, which enables WeChat authentication capabilities.
         /// </summary>
         /// <example>
-        /// .AddWeiChat（options  =>
+        /// .AddWeChat（options  =>
         /// {
-        ///     options.ClientId = configuration["Authentication:WeiChat:AppId"];
-        ///     options.ClientSecret = configuration["Authentication:WeiChat:AppSecret"];
+        ///     options.ClientId = configuration["Authentication:WeChat:AppId"];
+        ///     options.ClientSecret = configuration["Authentication:WeChat:AppSecret"];
         /// }
         /// </example>
         /// <param name="builder">The authentication builder.</param>
         /// <param name="scheme">The authentication scheme associated with this instance.</param>
-        /// <param name="configuration">The delegate used to configure the WeiChat options.</param>
+        /// <param name="configuration">The delegate used to configure the WeChat options.</param>
         /// <returns>The <see cref="AuthenticationBuilder"/>.</returns>
         public static AuthenticationBuilder AddWeChat(
             [NotNull] this AuthenticationBuilder builder, [NotNull] string scheme,
-            [NotNull] Action<WeiChatAuthenticationOptions> configuration)
+            [NotNull] Action<WeChatAuthenticationOptions> configuration)
         {
-            return builder.AddWeChat(scheme, WeiChatAuthenticationDefaults.DisplayName, configuration);
+            return builder.AddWeChat(scheme, WeChatAuthenticationDefaults.DisplayName, configuration);
         }
 
         /// <summary>
-        /// Adds <see cref="WeiChatAuthenticationHandler"/> to the specified
-        /// <see cref="AuthenticationBuilder"/>, which enables WeiChat authentication capabilities.
+        /// Adds <see cref="WeChatAuthenticationHandler"/> to the specified
+        /// <see cref="AuthenticationBuilder"/>, which enables WeChat authentication capabilities.
         /// </summary>
         /// <example>
-        /// .AddWeiChat（options  =>
+        /// .AddWeChat（options  =>
         /// {
-        ///     options.ClientId = configuration["Authentication:WeiChat:AppId"];
-        ///     options.ClientSecret = configuration["Authentication:WeiChat:AppSecret"];
+        ///     options.ClientId = configuration["Authentication:WeChat:AppId"];
+        ///     options.ClientSecret = configuration["Authentication:WeChat:AppSecret"];
         /// }
         /// </example>
         /// <param name="builder">The authentication builder.</param>
         /// <param name="scheme">The authentication scheme associated with this instance.</param>
         /// <param name="caption">The optional display name associated with this instance.</param>
-        /// <param name="configuration">The delegate used to configure the WeiChat options.</param>
+        /// <param name="configuration">The delegate used to configure the WeChat options.</param>
         /// <returns>The <see cref="AuthenticationBuilder"/>.</returns>
         public static AuthenticationBuilder AddWeChat(
             [NotNull] this AuthenticationBuilder builder,
             [NotNull] string scheme, [CanBeNull] string caption,
-            [NotNull] Action<WeiChatAuthenticationOptions> configuration)
+            [NotNull] Action<WeChatAuthenticationOptions> configuration)
         {
-            return builder.AddOAuth<WeiChatAuthenticationOptions, WeiChatAuthenticationHandler>(scheme, caption, configuration);
+            return builder.AddOAuth<WeChatAuthenticationOptions, WeChatAuthenticationHandler>(scheme, caption, configuration);
         }
     }
 }

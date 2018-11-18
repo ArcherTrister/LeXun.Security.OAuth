@@ -10,9 +10,9 @@
     <!--产品-->
     <Product>Security.OAuth</Product>
     <!--说明-->
-    <Description>ASP.NET Core security middleware enabling WeiChat authentication.</Description>
+    <Description>ASP.NET Core security middleware enabling WeChat authentication.</Description>
     <!--包ID-->
-    <PackageId>LeXun.Microsoft.AspNetCore.Security.Authentication.WeiChat</PackageId>
+    <PackageId>LeXun.Microsoft.AspNetCore.Security.Authentication.WeChat</PackageId>
     <!--标题 如果未指定，则改为使用包 ID-->
     <!--<Title></Title>-->
     <!--包版本-->
@@ -22,7 +22,7 @@
     <!--公司-->
     <Company>LeXun</Company>
     <!--标记-->
-    <PackageTags>aspnetcore;authentication;oauth;security;weichat</PackageTags>
+    <PackageTags>aspnetcore;authentication;oauth;security;wechat</PackageTags>
     <!--发行说明-->
     <PackageReleaseNotes>修改存储库路径</PackageReleaseNotes>
   </PropertyGroup>
