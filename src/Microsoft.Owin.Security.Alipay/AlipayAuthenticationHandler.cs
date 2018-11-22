@@ -1,4 +1,6 @@
-﻿using Microsoft.Owin.Infrastructure;
+﻿using Aop.Api;
+using Aop.Api.Request;
+using Microsoft.Owin.Infrastructure;
 using Microsoft.Owin.Logging;
 using Microsoft.Owin.Security.Infrastructure;
 using Newtonsoft.Json;
@@ -20,6 +22,7 @@ namespace Microsoft.Owin.Security.Alipay
         private const string XmlSchemaString = "http://www.w3.org/2001/XMLSchema#string";
         private readonly ILogger _logger;
         private readonly HttpClient _httpClient;
+        private DefaultAopClient _alipayClient = null;
 
         /// <summary>
         ///
@@ -30,6 +33,18 @@ namespace Microsoft.Owin.Security.Alipay
         {
             _httpClient = httpClient;
             _logger = logger;
+            if (_alipayClient == null)
+            {
+                _alipayClient = new DefaultAopClient(Options.GatewayUrl,
+                    Options.AppId,
+                    Options.AppSecret,
+                    Options.Format,
+                    Options.Version,
+                    Options.SignType,
+                    Options.AlipayPublicKey,
+                    Options.CharSet,
+                    Options.IsKeyFromFile);
+            }
         }
 
         /// <summary>
@@ -93,54 +108,65 @@ namespace Microsoft.Owin.Security.Alipay
                     //GetApiName()
                 };
 
-                var alipayResponse = await _alipayClient.ExecuteAsync(alipayRequest);
-
-                // Request the token
-                var tokenResponse =
-                    await _httpClient.PostAsync(Options.TokenEndPoint, new FormUrlEncodedContent(body));
-                tokenResponse.EnsureSuccessStatusCode();
-                var text = await tokenResponse.Content.ReadAsStringAsync();
-
-                // Deserializes the token response
-                dynamic response = JsonConvert.DeserializeObject<dynamic>(text);
-                if (response == null || response.access_token == null)
+                var alipayResponse = _alipayClient.Execute(alipayRequest);
+                if (alipayResponse.IsError)
                 {
-                    _logger.WriteWarning("Access token was not found");
+                    _logger.WriteWarning("An error occurred while retrieving an access token.");
                     return new AuthenticationTicket(null, properties);
                 }
-                var accessToken = (string)response.access_token;
-
-                // Get the Alipay user
-                // 
-                var userResponse = await _httpClient.GetAsync(
-                    Options.UserInfoEndPoint + "?access_token=" + Uri.EscapeDataString(accessToken), Request.CallCancelled);
-
-                userResponse.EnsureSuccessStatusCode();
-                text = await userResponse.Content.ReadAsStringAsync();
-                var user = JObject.Parse(text);
-
-                var context = new AlipayAuthenticatedContext(Context, user, accessToken)
+                else
                 {
-                    Identity = new ClaimsIdentity(
-                        Options.AuthenticationType,
-                        ClaimsIdentity.DefaultNameClaimType,
-                        ClaimsIdentity.DefaultRoleClaimType)
-                };
-                if (!string.IsNullOrEmpty(context.UserId))
-                {
-                    context.Identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, context.UserId, XmlSchemaString, Options.AuthenticationType));
-                    context.Identity.AddClaim(new Claim(Claims.UserId, context.UserId, XmlSchemaString, Options.AuthenticationType));
+                    // Request the token
+                    var tokenResponse =
+                        await _httpClient.PostAsync(Options.TokenEndPoint, new FormUrlEncodedContent(body));
+                    tokenResponse.EnsureSuccessStatusCode();
+                    var text = await tokenResponse.Content.ReadAsStringAsync();
+
+                    // Deserializes the token response
+                    dynamic response = JsonConvert.DeserializeObject<dynamic>(text);
+                    if (response == null || response.access_token == null)
+                    {
+                        _logger.WriteWarning("Access token was not found");
+                        return new AuthenticationTicket(null, properties);
+                    }
+                    var accessToken = (string)response.access_token;
+
+                    // Get the Alipay user
+                    // 
+                    var userResponse = await _httpClient.GetAsync(
+                        Options.UserInfoEndPoint + "?access_token=" + Uri.EscapeDataString(accessToken), Request.CallCancelled);
+
+                    userResponse.EnsureSuccessStatusCode();
+                    text = await userResponse.Content.ReadAsStringAsync();
+                    var user = JObject.Parse(text);
+
+                    var context = new AlipayAuthenticatedContext(Context, user, accessToken)
+                    {
+                        Identity = new ClaimsIdentity(
+                            Options.AuthenticationType,
+                            ClaimsIdentity.DefaultNameClaimType,
+                            ClaimsIdentity.DefaultRoleClaimType)
+                    };
+                    if (!string.IsNullOrEmpty(context.UserId))
+                    {
+                        context.Identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, context.UserId, XmlSchemaString, Options.AuthenticationType));
+                        context.Identity.AddClaim(new Claim(Claims.UserId, context.UserId, XmlSchemaString, Options.AuthenticationType));
+                    }
+                    if (!string.IsNullOrEmpty(context.UserName))
+                    {
+                        context.Identity.AddClaim(new Claim(ClaimsIdentity.DefaultNameClaimType, context.UserName, XmlSchemaString, Options.AuthenticationType));
+                        context.Identity.AddClaim(new Claim(Claims.NickName, context.UserName, XmlSchemaString, Options.AuthenticationType));
+                    }
+                    context.Properties = properties;
+
+                    await Options.Provider.Authenticated(context);
+
+                    return new AuthenticationTicket(context.Identity, context.Properties);
+
+                    //var payload = JObject.FromObject(alipayResponse);
+                    //return OAuthTokenResponse.Success(payload);
+
                 }
-                if (!string.IsNullOrEmpty(context.UserName))
-                {
-                    context.Identity.AddClaim(new Claim(ClaimsIdentity.DefaultNameClaimType, context.UserName, XmlSchemaString, Options.AuthenticationType));
-                    context.Identity.AddClaim(new Claim(Claims.NickName, context.UserName, XmlSchemaString, Options.AuthenticationType));
-                }
-                context.Properties = properties;
-
-                await Options.Provider.Authenticated(context);
-
-                return new AuthenticationTicket(context.Identity, context.Properties);
             }
             catch (Exception ex)
             {

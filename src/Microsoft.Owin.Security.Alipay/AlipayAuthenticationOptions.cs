@@ -20,7 +20,7 @@ namespace Microsoft.Owin.Security.Alipay
             AuthenticationMode = AuthenticationMode.Passive;
             Scope = new List<string>
             {
-                "basic"
+                "auth_user"
             };
             BackchannelTimeout = TimeSpan.FromSeconds(60);
             AuthorizationEndPoint = AlipayAuthenticationDefaults.AuthorizationEndpoint;
@@ -98,11 +98,6 @@ namespace Microsoft.Owin.Security.Alipay
         public string AppSecret { get; set; }
 
         /// <summary>
-        /// Gets or sets the Alipay supplied AlipayPublicKey
-        /// </summary>
-        public string AlipayPublicKey { get; set; }
-
-        /// <summary>
         /// A list of permissions to request.
         /// </summary>
         public IList<string> Scope { get; private set; }
@@ -122,5 +117,40 @@ namespace Microsoft.Owin.Security.Alipay
         ///     Gets or sets the type used to secure data handled by the middleware.
         /// </summary>
         public ISecureDataFormat<AuthenticationProperties> StateDataFormat { get; set; }
+
+        /// <summary>
+        /// 支付宝网关
+        /// </summary>
+        public string GatewayUrl { get; set; }
+
+        /// <summary>
+        /// 支付宝公钥
+        /// </summary>
+        public string AlipayPublicKey { get; set; }
+
+        /// <summary>
+        /// 签名方式
+        /// </summary>
+        public string SignType { get; set; }
+
+        /// <summary>
+        /// 编码格式
+        /// </summary>
+        public string CharSet { get; set; }
+
+        /// <summary>
+        /// 版本
+        /// </summary>
+        public string Version { get; private set; }
+
+        /// <summary>
+        /// 数据格式
+        /// </summary>
+        public string Format { get; private set; }
+
+        /// <summary>
+        /// 是否从文件读取公私钥
+        /// </summary>
+        public bool IsKeyFromFile { get; set; }
     }
 }
