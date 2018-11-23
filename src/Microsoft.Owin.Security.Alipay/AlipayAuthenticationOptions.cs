@@ -26,12 +26,27 @@ namespace Microsoft.Owin.Security.Alipay
             AuthorizationEndPoint = AlipayAuthenticationDefaults.AuthorizationEndpoint;
             TokenEndPoint = AlipayAuthenticationDefaults.TokenEndpoint;
             UserInfoEndPoint = AlipayAuthenticationDefaults.UserInformationEndpoint;
+
+            AuthorizationGotoPoint = AlipayAuthenticationDefaults.AuthorizationGotoPoint;
+
+            GatewayUrl = AlipayAuthenticationDefaults.GatewayUrl;
+            AlipayPublicKey = AlipayAuthenticationDefaults.AlipayPublicKey;
+            SignType = AlipayAuthenticationDefaults.SignType;
+            CharSet = AlipayAuthenticationDefaults.CharSet;
+            Version = AlipayAuthenticationDefaults.Version;
+            Format = AlipayAuthenticationDefaults.Format;
+            IsKeyFromFile = AlipayAuthenticationDefaults.IsKeyFromFile;
         }
 
         /// <summary>
         /// Endpoint which is used to redirect users to request Alipay access
         /// </summary>
         public string AuthorizationEndPoint { get; set; }
+
+        /// <summary>
+        /// Endpoint which is used to redirect users to request Alipay access
+        /// </summary>
+        public string AuthorizationGotoPoint { get; set; }
 
         /// <summary>
         /// Endpoint which is used to exchange code for access token

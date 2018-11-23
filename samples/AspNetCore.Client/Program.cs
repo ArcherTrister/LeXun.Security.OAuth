@@ -30,6 +30,7 @@ namespace AspNetCore.Client
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+            .UseUrls("http://*:1729")
                 .UseStartup<Startup>();
 
         #endregion

@@ -1,4 +1,5 @@
-﻿using Microsoft.Owin.Logging;
+﻿using Aop.Api;
+using Microsoft.Owin.Logging;
 using Microsoft.Owin.Security.DataHandler;
 using Microsoft.Owin.Security.DataProtection;
 using Microsoft.Owin.Security.Infrastructure;
@@ -16,6 +17,7 @@ namespace Microsoft.Owin.Security.Alipay
     {
         private readonly HttpClient _httpClient;
         private readonly ILogger _logger;
+        private readonly DefaultAopClient _alipayClient;
 
         /// <summary>
         ///
@@ -33,6 +35,9 @@ namespace Microsoft.Owin.Security.Alipay
             if (string.IsNullOrWhiteSpace(Options.AppSecret))
                 throw new ArgumentException(string.Format(CultureInfo.CurrentCulture,
                     Resources.Exception_OptionMustBeProvided, nameof(Options.AppSecret)));
+            if (string.IsNullOrWhiteSpace(Options.AlipayPublicKey))
+                throw new ArgumentException(string.Format(CultureInfo.CurrentCulture,
+                    Resources.Exception_OptionMustBeProvided, nameof(Options.AlipayPublicKey)));
 
             _logger = app.CreateLogger<AlipayAuthenticationMiddleware>();
 
@@ -55,6 +60,15 @@ namespace Microsoft.Owin.Security.Alipay
                 Timeout = Options.BackchannelTimeout,
                 MaxResponseContentBufferSize = 1024 * 1024 * 10
             };
+            _alipayClient = new DefaultAopClient(Options.GatewayUrl,
+                Options.AppId,
+                Options.AppSecret,
+                Options.Format,
+                Options.Version,
+                Options.SignType,
+                Options.AlipayPublicKey,
+                Options.CharSet,
+                Options.IsKeyFromFile);
         }
 
         /// <summary>
@@ -67,7 +81,7 @@ namespace Microsoft.Owin.Security.Alipay
         /// </returns>
         protected override AuthenticationHandler<AlipayAuthenticationOptions> CreateHandler()
         {
-            return new AlipayAuthenticationHandler(_httpClient, _logger);
+            return new AlipayAuthenticationHandler(_httpClient, _logger, _alipayClient);
         }
 
         private static HttpMessageHandler ResolveHttpMessageHandler(AlipayAuthenticationOptions options)

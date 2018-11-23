@@ -1,7 +1,9 @@
 // Copyright (c) Microsoft Open Technologies, Inc. All rights reserved. See License.txt in the project root for license information.
 
+using Aop.Api.Response;
 using Microsoft.Owin.Security.Provider;
 using Newtonsoft.Json.Linq;
+using System;
 using System.Security.Claims;
 
 namespace Microsoft.Owin.Security.Alipay
@@ -17,16 +19,33 @@ namespace Microsoft.Owin.Security.Alipay
         /// <param name="context">The OWIN environment</param>
         /// <param name="user">The JSON-serialized user</param>
         /// <param name="accessToken">Alipay Access token</param>
-        public AlipayAuthenticatedContext(IOwinContext context, JObject user, string accessToken)
+        public AlipayAuthenticatedContext(IOwinContext context, AlipayUserInfoShareResponse user, string accessToken, int expiresIn)
             : base(context)
         {
             AccessToken = accessToken;
+            ExpiresIn = TimeSpan.FromSeconds(expiresIn);
             User = user;
-
-            UserId = TryGetValue(user, "userid");
-            UserName = TryGetValue(user, "username");
+            UserId = user.UserId;
+            UserName = user.UserName;
+            NickName = user.NickName;
             //RealName = TryGetValue(user, "realname");
+            //ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "user_id");
+            //ClaimActions.MapJsonKey(ClaimTypes.Name, "nick_name");
+            ////【注意】只有is_certified为T的时候才有意义，否则不保证准确性. 性别（F：女性；M：男性）。
+            //ClaimActions.MapJsonKey(ClaimTypes.Gender, "gender", ClaimValueTypes.Integer);
+            //ClaimActions.MapJsonKey(Claims.Avatar, "avatar");
+            //ClaimActions.MapJsonKey(Claims.Province, "province");
+            //ClaimActions.MapJsonKey(Claims.City, "city");
+            //ClaimActions.MapJsonKey(Claims.IsStudentCertified, "is_student_certified");
+            //ClaimActions.MapJsonKey(Claims.UserType, "user_type");
+            //ClaimActions.MapJsonKey(Claims.UserStatus, "user_status");
+            //ClaimActions.MapJsonKey(Claims.IsCertified, "is_certified");
         }
+
+        /// <summary>
+        /// Gets the Tencent access token expiration time
+        /// </summary>
+        public TimeSpan? ExpiresIn { get; set; }
 
         /// <summary>
         /// Gets the JSON-serialized user
@@ -34,7 +53,7 @@ namespace Microsoft.Owin.Security.Alipay
         /// <remarks>
         /// Contains the Alipay user obtained from the endpoint https://api.dropbox.com/1/account/info
         /// </remarks>
-        public JObject User { get; private set; }
+        public AlipayUserInfoShareResponse User { get; private set; }
 
         /// <summary>
         /// Gets the Alipay OAuth access token
@@ -50,6 +69,11 @@ namespace Microsoft.Owin.Security.Alipay
         /// The name of the user
         /// </summary>
         public string UserName { get; private set; }
+
+        /// <summary>
+        /// The nickname of the user
+        /// </summary>
+        public string NickName { get; private set; }
 
         ///// <summary>
         ///// The real name of the user
