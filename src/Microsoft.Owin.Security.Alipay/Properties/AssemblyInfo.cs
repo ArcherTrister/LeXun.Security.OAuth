@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("Microsoft.Owin.Security.Alipay")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Alipay OAuth For ASP.NET.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("LeXun")]
 [assembly: AssemblyProduct("Microsoft.Owin.Security.Alipay")]
-[assembly: AssemblyCopyright("Copyright ©  2018")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("Copyright © LeXun 2018")]
+[assembly: AssemblyTrademark("https://oauth.net/images/oauth-2-sm.png")]
 [assembly: AssemblyCulture("")]
 
 // 将 ComVisible 设置为 false 会使此程序集中的类型

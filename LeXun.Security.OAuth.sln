@@ -56,6 +56,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.AspNetCore.Securi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.AspNetCore.Security.Authentication.WeChatPublic", "src\Microsoft.AspNetCore.Security.Authentication.WeChatPublic\Microsoft.AspNetCore.Security.Authentication.WeChatPublic.csproj", "{6E15B17B-91A5-435C-818F-D909BC116619}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6B937C30-493C-4CEC-8EBA-F08118532028}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
