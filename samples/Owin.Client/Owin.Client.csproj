@@ -56,7 +56,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Antlr" Version="3.5.0.2" />
-    <PackageReference Include="bootstrap" Version="3.3.7" />
+    <PackageReference Include="bootstrap" Version="3.4.1" />
     <PackageReference Include="EntityFramework" Version="6.2.0" />
     <PackageReference Include="EntityFramework.zh-Hans" Version="6.2.0" />
     <PackageReference Include="jQuery" Version="3.3.1" />
