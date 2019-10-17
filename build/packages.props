@@ -16,11 +16,13 @@
     <!--版权-->
     <Copyright>Copyright © LeXun 2018</Copyright>
     <!--许可证URL-->
-    <PackageLicenseUrl>https://github.com/ArcherTrister/LeXun.Security.OAuth/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <!--<PackageLicenseUrl>https://github.com/ArcherTrister/LeXun.Security.OAuth/blob/master/LICENSE</PackageLicenseUrl>-->
     <!--项目URL-->
     <PackageProjectUrl>http://github.lxking.cn</PackageProjectUrl>
     <!--图标URL-->
-    <PackageIconUrl>https://oauth.net/images/oauth-2-sm.png</PackageIconUrl>
+    <PackageIcon>oauth-2-sm.png</PackageIcon>
+    <!--<PackageIconUrl>https://oauth.net/images/oauth-2-sm.png</PackageIconUrl>-->
     <!--存储库URL-->
     <RepositoryUrl>https://github.com/ArcherTrister/LeXun.Security.OAuth</RepositoryUrl>
     <!--存储库类型-->
@@ -30,5 +32,9 @@
     <!--一个布尔值，指定客户端是否必须提示使用者接受包许可证后才可安装包。默认值为 false-->
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../build/oauth-2-sm.png" Pack="true" PackagePath=""/>
+  </ItemGroup>
   
 </Project>
