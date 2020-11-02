@@ -57,7 +57,7 @@
   <ItemGroup>
     <PackageReference Include="Antlr" Version="3.5.0.2" />
     <PackageReference Include="bootstrap" Version="3.4.1" />
-    <PackageReference Include="EntityFramework" Version="6.2.0" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="EntityFramework.zh-Hans" Version="6.2.0" />
     <PackageReference Include="jQuery" Version="3.3.1" />
     <PackageReference Include="jQuery.Validation" Version="1.17.0" />
@@ -85,10 +85,10 @@
     <PackageReference Include="Microsoft.AspNet.WebPages.zh-Hans" Version="3.2.4" />
     <PackageReference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform" Version="2.0.0" />
     <PackageReference Include="Microsoft.jQuery.Unobtrusive.Validation" Version="3.2.4" />
-    <PackageReference Include="Microsoft.Owin" Version="4.0.0" />
-    <PackageReference Include="Microsoft.Owin.Host.SystemWeb" Version="4.0.0" />
-    <PackageReference Include="Microsoft.Owin.Host.SystemWeb.zh-Hans" Version="4.0.0" />
-    <PackageReference Include="Microsoft.Owin.Security" Version="4.0.0" />
+    <PackageReference Include="Microsoft.Owin" Version="4.1.1" />
+    <PackageReference Include="Microsoft.Owin.Host.SystemWeb" Version="4.1.1" />
+    <PackageReference Include="Microsoft.Owin.Host.SystemWeb.zh-Hans" Version="4.1.1" />
+    <PackageReference Include="Microsoft.Owin.Security" Version="4.1.1" />
     <PackageReference Include="Microsoft.Owin.Security.Cookies" Version="4.0.0" />
     <PackageReference Include="Microsoft.Owin.Security.Facebook" Version="4.0.0" />
     <PackageReference Include="Microsoft.Owin.Security.Facebook.zh-Hans" Version="4.0.0" />
@@ -100,10 +100,10 @@
     <PackageReference Include="Microsoft.Owin.Security.Twitter" Version="4.0.0" />
     <PackageReference Include="Microsoft.Owin.Security.Twitter.zh-Hans" Version="4.0.0" />
     <PackageReference Include="Microsoft.Owin.Security.zh-Hans" Version="4.0.0" />
-    <PackageReference Include="Microsoft.Owin.zh-Hans" Version="4.0.0" />
+    <PackageReference Include="Microsoft.Owin.zh-Hans" Version="4.1.1" />
     <PackageReference Include="Microsoft.Web.Infrastructure" Version="1.0.0.0" />
     <PackageReference Include="Modernizr" Version="2.8.3" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Owin" Version="1.0" />
     <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="4.4.1" />
     <PackageReference Include="WebGrease" Version="1.6.0" />

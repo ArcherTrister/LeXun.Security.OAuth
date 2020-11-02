@@ -59,6 +59,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.AspNetCore.Securi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6B937C30-493C-4CEC-8EBA-F08118532028}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeChatMiniProgram", "src\WeChatMiniProgram\WeChatMiniProgram.csproj", "{5C102C9F-F57E-460F-8B5A-6C492E6D16EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +131,10 @@ Global
 		{6E15B17B-91A5-435C-818F-D909BC116619}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E15B17B-91A5-435C-818F-D909BC116619}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E15B17B-91A5-435C-818F-D909BC116619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C102C9F-F57E-460F-8B5A-6C492E6D16EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C102C9F-F57E-460F-8B5A-6C492E6D16EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C102C9F-F57E-460F-8B5A-6C492E6D16EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C102C9F-F57E-460F-8B5A-6C492E6D16EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -150,6 +156,7 @@ Global
 		{E35E2408-F1AB-4DF8-A5E2-AD2CD31C8EFE} = {8ADF44C5-9119-4672-9FEA-CA3693239320}
 		{57F0FC29-3414-42E4-AD07-308101C32692} = {EB47B3AA-768E-4D55-BE24-F961A09AEB1F}
 		{6E15B17B-91A5-435C-818F-D909BC116619} = {EB47B3AA-768E-4D55-BE24-F961A09AEB1F}
+		{5C102C9F-F57E-460F-8B5A-6C492E6D16EF} = {EB47B3AA-768E-4D55-BE24-F961A09AEB1F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8A3A261A-99BC-4734-B130-203331CC94C4}
