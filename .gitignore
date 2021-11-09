@@ -4,7 +4,6 @@
 # VS 14 temporary folder
 *.sln.ide/
 target/
-.nuget/
 .vs/
 .build/
 

@@ -20,18 +20,33 @@ namespace Microsoft.Owin.Security.Alipay
             AuthenticationMode = AuthenticationMode.Passive;
             Scope = new List<string>
             {
-                "basic"
+                "auth_user"
             };
             BackchannelTimeout = TimeSpan.FromSeconds(60);
             AuthorizationEndPoint = AlipayAuthenticationDefaults.AuthorizationEndpoint;
             TokenEndPoint = AlipayAuthenticationDefaults.TokenEndpoint;
             UserInfoEndPoint = AlipayAuthenticationDefaults.UserInformationEndpoint;
+
+            AuthorizationGotoPoint = AlipayAuthenticationDefaults.AuthorizationGotoPoint;
+
+            GatewayUrl = AlipayAuthenticationDefaults.GatewayUrl;
+            AlipayPublicKey = AlipayAuthenticationDefaults.AlipayPublicKey;
+            SignType = AlipayAuthenticationDefaults.SignType;
+            CharSet = AlipayAuthenticationDefaults.CharSet;
+            Version = AlipayAuthenticationDefaults.Version;
+            Format = AlipayAuthenticationDefaults.Format;
+            IsKeyFromFile = AlipayAuthenticationDefaults.IsKeyFromFile;
         }
 
         /// <summary>
         /// Endpoint which is used to redirect users to request Alipay access
         /// </summary>
         public string AuthorizationEndPoint { get; set; }
+
+        /// <summary>
+        /// Endpoint which is used to redirect users to request Alipay access
+        /// </summary>
+        public string AuthorizationGotoPoint { get; set; }
 
         /// <summary>
         /// Endpoint which is used to exchange code for access token
@@ -88,12 +103,12 @@ namespace Microsoft.Owin.Security.Alipay
         }
 
         /// <summary>
-        /// Gets or sets the Alipay supplied API Key
+        /// Gets or sets the Alipay supplied AppId
         /// </summary>
         public string AppId { get; set; }
 
         /// <summary>
-        /// Gets or sets the Alipay supplied Secret Key
+        /// Gets or sets the Alipay supplied AppSecret
         /// </summary>
         public string AppSecret { get; set; }
 
@@ -117,5 +132,40 @@ namespace Microsoft.Owin.Security.Alipay
         ///     Gets or sets the type used to secure data handled by the middleware.
         /// </summary>
         public ISecureDataFormat<AuthenticationProperties> StateDataFormat { get; set; }
+
+        /// <summary>
+        /// 支付宝网关
+        /// </summary>
+        public string GatewayUrl { get; set; }
+
+        /// <summary>
+        /// 支付宝公钥
+        /// </summary>
+        public string AlipayPublicKey { get; set; }
+
+        /// <summary>
+        /// 签名方式
+        /// </summary>
+        public string SignType { get; set; }
+
+        /// <summary>
+        /// 编码格式
+        /// </summary>
+        public string CharSet { get; set; }
+
+        /// <summary>
+        /// 版本
+        /// </summary>
+        public string Version { get; private set; }
+
+        /// <summary>
+        /// 数据格式
+        /// </summary>
+        public string Format { get; private set; }
+
+        /// <summary>
+        /// 是否从文件读取公私钥
+        /// </summary>
+        public bool IsKeyFromFile { get; set; }
     }
 }

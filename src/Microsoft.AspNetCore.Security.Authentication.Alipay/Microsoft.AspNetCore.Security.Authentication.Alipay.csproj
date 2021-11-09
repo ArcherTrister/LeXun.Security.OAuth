@@ -24,12 +24,12 @@
     <!--标记-->
     <PackageTags>aspnetcore;authentication;oauth;security;alipay</PackageTags>
     <!--发行说明-->
-    <PackageReleaseNotes>修改存储库路径</PackageReleaseNotes>
+    <PackageReleaseNotes>更新引用包版本</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" Version="$(JetBrainsVersion)" PrivateAssets="All" />
-    <PackageReference Include="LeXun.Alipay.AopSdk.Core" Version="2.0.0" />
+    <PackageReference Include="JetBrains.Annotations" Version="2020.1.0" PrivateAssets="All" />
+    <PackageReference Include="LeXun.Aliyun.AopSdk.Core" Version="2.3.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OAuth" Version="$(AspNetCoreVersion)" />
   </ItemGroup>
 

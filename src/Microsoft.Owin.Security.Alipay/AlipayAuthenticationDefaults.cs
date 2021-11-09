@@ -35,7 +35,13 @@ namespace Microsoft.Owin.Security.Alipay
         /// Default value for <see cref="AlipayAuthenticationOptions.AuthorizationEndPoint"/>.
         /// </summary>
         //public const string AuthorizationEndpoint = "https://openauth.alipaydev.com/oauth2/publicAppAuthorize.htm";//沙箱
-        public const string AuthorizationEndpoint = "https://openauth.alipay.com/oauth2/publicAppAuthorize.htm";
+        //public const string AuthorizationEndpoint = "https://openauth.alipay.com/oauth2/publicAppAuthorize.htm";
+        public const string AuthorizationEndpoint = "https://auth.alipay.com/login/index.htm";
+
+        /// <summary>
+        /// Default value for <see cref="AlipayAuthenticationOptions.AuthorizationGotoPoint"/>.
+        /// </summary>
+        public const string AuthorizationGotoPoint = "https://openauth.alipay.com/oauth2/publicAppAuthorize.htm";
 
         /// <summary>
         /// Default value for <see cref="AlipayAuthenticationOptions.TokenEndPoint"/>.

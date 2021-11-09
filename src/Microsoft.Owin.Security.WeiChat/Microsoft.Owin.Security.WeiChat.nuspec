@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>LeXun.Microsoft.Owin.Security.WeiChat</id>
+    <version>1.0.0</version>
+    <authors>ArcherTrister</authors>
+    <owners>ArcherTrister</owners>
+    <licenseUrl>https://github.com/ArcherTrister/LeXun.Security.OAuth/blob/master/LICENSE</licenseUrl>
+    <projectUrl>http://github.lxking.cn</projectUrl>
+    <iconUrl>https://oauth.net/images/oauth-2-sm.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>腾讯微信 OAuth2.0快捷登录。</description>
+    <releaseNotes>添加强名称，并统一程序集版本号.</releaseNotes>
+    <copyright>Copyright © LeXun 2018</copyright>
+    <tags>.NET FrameWork WeiChat OAuth2.0 Owin</tags>
+    <dependencies>
+      <dependency id="Microsoft.Owin" version="4.0.0" />
+      <dependency id="Microsoft.Owin.Security" version="4.0.0" />
+      <dependency id="Newtonsoft.Json" version="11.0.1" />
+      <dependency id="Owin" version="1.0.0" />
+    </dependencies>
+  </metadata>
+</package>
