@@ -16,9 +16,9 @@ namespace Microsoft.Owin.Security.Sina
         ///     Initializes a new <see cref="SinaAuthenticationOptions" />
         /// </summary>
         public SinaAuthenticationOptions()
-            : base(DefaultAuthenticationType)
+            : base(SinaAuthenticationConstants.DefaultAuthenticationType)
         {
-            Caption = DefaultAuthenticationType;
+            Caption = SinaAuthenticationConstants.DefaultAuthenticationType;
             CallbackPath = new PathString("/signin-sina");
             AuthenticationMode = AuthenticationMode.Passive;
             Scope = new List<string>
@@ -26,7 +26,7 @@ namespace Microsoft.Owin.Security.Sina
                 "all"
             };
             BackchannelTimeout = TimeSpan.FromSeconds(60);
-            AuthorizationEndpoint = AuthorizationEndPoint;
+            AuthorizationEndpoint = SinaAuthenticationConstants.AuthorizationEndPoint;
             TokenEndpoint = TokenEndpoint;
             UserInfoEndpoint = UserInfoEndpoint;
         }

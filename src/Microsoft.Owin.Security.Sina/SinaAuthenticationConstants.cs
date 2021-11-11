@@ -8,6 +8,9 @@ namespace Microsoft.Owin.Security.Sina
 {
     public static class SinaAuthenticationConstants
     {
+        public const string DefaultAuthenticationType = "Sina";
 
+        public const string AuthorizationEndPoint = "https://api.weibo.com/oauth2/authorize";
+        public const string TokenEndpoint = "https://api.weibo.com/oauth2/access_token";
     }
 }

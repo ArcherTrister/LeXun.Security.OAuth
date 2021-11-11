@@ -27,10 +27,10 @@ namespace Microsoft.Owin.Security.Sina
         {
             if (String.IsNullOrWhiteSpace(Options.AppId))
                 throw new ArgumentException(String.Format(CultureInfo.CurrentCulture,
-					Resources.Exception_OptionMustBeProvided, "ClientId"));
+                    "The '{0}' option must be provided.", "ClientId"));
             if (String.IsNullOrWhiteSpace(Options.AppSecret))
                 throw new ArgumentException(String.Format(CultureInfo.CurrentCulture,
-                    Resources.Exception_OptionMustBeProvided, "ClientSecret"));
+                    "The '{0}' option must be provided.", "ClientSecret"));
 
             logger = app.CreateLogger<SinaAuthenticationMiddleware>();
 
@@ -81,7 +81,7 @@ namespace Microsoft.Owin.Security.Sina
                 var webRequestHandler = handler as WebRequestHandler;
                 if (webRequestHandler == null)
                 {
-                    throw new InvalidOperationException(Resources.Exception_ValidatorHandlerMismatch);
+                    throw new InvalidOperationException("An ICertificateValidator cannot be specified at the same time as an HttpMessageHandler unless it is a WebRequestHandler.");
                 }
                 webRequestHandler.ServerCertificateValidationCallback = options.BackchannelCertificateValidator.Validate;
             }

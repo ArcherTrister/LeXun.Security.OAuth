@@ -79,7 +79,7 @@ namespace Microsoft.Owin.Security.QQ
             // Set the cert validate callback
             if (!(handler is WebRequestHandler webRequestHandler))
             {
-                throw new InvalidOperationException(Resources.Exception_ValidatorHandlerMismatch);
+                throw new InvalidOperationException("An ICertificateValidator cannot be specified at the same time as an HttpMessageHandler unless it is a WebRequestHandler.");
             }
             webRequestHandler.ServerCertificateValidationCallback = options.BackchannelCertificateValidator.Validate;
 

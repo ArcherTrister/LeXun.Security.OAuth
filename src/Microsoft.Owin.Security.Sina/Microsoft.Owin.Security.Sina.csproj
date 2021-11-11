@@ -58,6 +58,7 @@
     <Compile Include="Provider\SinaAuthenticatedContext.cs" />
     <Compile Include="Provider\SinaAuthenticationProvider.cs" />
     <Compile Include="Provider\SinaReturnEndpointContext.cs" />
+    <Compile Include="SinaAuthenticationEndpoints.cs" />
     <Compile Include="SinaAuthenticationExtensions.cs" />
     <Compile Include="SinaAuthenticationHandler.cs" />
     <Compile Include="SinaAuthenticationMiddleware.cs" />
@@ -78,7 +79,8 @@
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!--add start--><!--
+  <!--add start-->
+  <!--
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -86,5 +88,6 @@
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
-  --><!--add end-->
+  -->
+  <!--add end-->
 </Project>
