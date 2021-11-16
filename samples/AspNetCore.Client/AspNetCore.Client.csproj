@@ -4,7 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>aspnet-AspNetCore.Client-2E8C45AE-38FD-4C3B-BE89-1797BCB73E71</UserSecretsId>
     <PackageId>AspNetCore.Client</PackageId>
-    <Authors>LDMING</Authors>
+    <Authors>ArcherTrister</Authors>
     <PackageProjectUrl></PackageProjectUrl>
     <Company />
     <Product />

@@ -150,6 +150,10 @@
       <Project>{eed41d91-ca7f-40fb-9f5d-598084ef2b7f}</Project>
       <Name>Microsoft.Owin.Security.QQ</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Microsoft.Owin.Security.Sina\Microsoft.Owin.Security.Sina.csproj">
+      <Project>{d312333e-d89c-4fd1-9f8a-2fba4376aae7}</Project>
+      <Name>Microsoft.Owin.Security.Sina</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Microsoft.Owin.Security.WeiChat\Microsoft.Owin.Security.WeiChat.csproj">
       <Project>{ac1931f3-88ed-410f-8d61-728c4a346c22}</Project>
       <Name>Microsoft.Owin.Security.WeiChat</Name>
